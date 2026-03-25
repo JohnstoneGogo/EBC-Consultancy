@@ -28,53 +28,56 @@ export const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           
           {/* Left Column - Professional Picture */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7 }}
-          >
-            {/* Main Image Container */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <div className="aspect-[4/5] bg-gradient-to-br from-ebcNavy/10 to-ebcGold/10 p-2">
-                <img 
-                  src="/src/assets/andrew.jpeg" 
-                  alt="Andrew Wanjala Wafula - Founder"
-                  className="w-full h-full object-cover rounded-xl"
-                  loading="eager"
-                />
+          <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7 }}
+              className="relative"
+            >
+              {/* Main Image Container */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <div className="aspect-[4/5] bg-gradient-to-br from-ebcNavy/10 to-ebcGold/10 p-2">
+                  <img 
+                    src="/src/assets/andrew.jpeg" 
+                    alt="Andrew Wanjala Wafula - Founder"
+                    className="w-full h-full object-cover rounded-xl"
+                    loading="eager"
+                  />
+                </div>
+                
+                {/* Decorative Border */}
+                <div className="absolute inset-0 border-2 border-ebcGold/20 rounded-2xl pointer-events-none" />
               </div>
               
-              {/* Decorative Border */}
-              <div className="absolute inset-0 border-2 border-ebcGold/20 rounded-2xl pointer-events-none" />
-            </div>
-            
-            {/* Floating Quote Card */}
-            <motion.div
-              className="absolute -bottom-8 -right-8 bg-white rounded-xl shadow-xl p-6 max-w-xs border-l-4 border-ebcGold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.4, duration: 0.5 }}
-            >
-              <div className="text-4xl text-ebcGold mb-2">"</div>
-              <p className="text-ebcGray text-sm italic leading-relaxed">
-                I believe sustainable development happens at the intersection — where economic opportunity meets health systems.
-              </p>
-              <p className="text-xs font-semibold text-ebcNavy mt-3">
-                — Andrew Wanjala Wafula
-              </p>
+              {/* Floating Quote Card */}
+              <motion.div
+                className="absolute -bottom-8 -right-12 bg-white rounded-xl shadow-xl p-6 max-w-xs border-l-4 border-ebcGold z-10"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.4, duration: 0.5 }}
+              >
+                <div className="text-4xl text-ebcGold mb-2">"</div>
+                <p className="text-ebcGray text-sm italic leading-relaxed">
+                  I believe sustainable development happens at the intersection — where economic opportunity meets health systems.
+                </p>
+                <p className="text-xs font-semibold text-ebcNavy mt-3">
+                  — Andrew Wanjala Wafula
+                </p>
+              </motion.div>
+              
+              {/* Experience Badge */}
+              <motion.div
+                className="absolute -top-4 -left-4 bg-ebcGold text-white rounded-lg p-4 shadow-lg z-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                <div className="text-2xl font-bold">10+</div>
+                <div className="text-xs">Years in<br />Development</div>
+              </motion.div>
             </motion.div>
-            
-            {/* Experience Badge */}
-            <motion.div
-              className="absolute -top-4 -left-4 bg-ebcGold text-white rounded-lg p-4 shadow-lg"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
-              <div className="text-2xl font-bold">10+</div>
-              <div className="text-xs">Years in<br />Development</div>
-            </motion.div>
-          </motion.div>
+          </div>
           
           {/* Right Column - Content */}
           <motion.div
@@ -174,4 +177,3 @@ export const AboutSection = () => {
     </section>
   );
 };
-

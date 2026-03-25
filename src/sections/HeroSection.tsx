@@ -125,11 +125,6 @@ export const HeroSection = () => {
         ))}
       </div>
       
-      {/* Slide Counter */}
-      <div className="absolute bottom-24 right-8 z-20 text-white/80 text-sm font-mono bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">
-        <span className="text-ebcGold font-bold">{String(currentSlide + 1).padStart(2, '0')}</span> / {String(sliderImages.length).padStart(2, '0')}
-      </div>
-      
       {/* Content - Appears ABOVE the slider background */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
@@ -141,8 +136,6 @@ export const HeroSection = () => {
             initial="hidden"
             animate="visible"
           >
-           
-
             {/* Badge */}
             <motion.div 
               variants={itemVariants}
@@ -172,14 +165,6 @@ export const HeroSection = () => {
               </span>{' '}
               to Empowerment
             </motion.h1>
-            
-            {/* Subheading */}
-            <motion.p 
-              className="text-lg md:text-xl text-white/90 max-w-xl leading-relaxed"
-              variants={itemVariants}
-            >
-              EBC is a strategic advisory firm partnering with institutions, governments, and communities to design and deliver innovative, evidence-based solutions that advance sustainable development through inclusive economic empowerment.
-            </motion.p>
             
             {/* CTA Buttons */}
             <motion.div 
@@ -304,13 +289,23 @@ export const HeroSection = () => {
                 ))}
               </div>
               
-              {/* Bottom Label */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
+              {/* Bottom Label - Left Corner */}
+              <div className="absolute bottom-4 left-4 text-center">
                 <p className="text-xs text-white/60">Connecting Communities • Building Futures</p>
               </div>
             </div>
           </motion.div>
         </div>
+        
+        {/* Subheading - Full width */}
+        <motion.p 
+          className="text-lg md:text-xl text-white/90 leading-relaxed mt-12 pt-8 border-t border-white/20 max-w-4xl"
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          EBC is a strategic advisory firm partnering with institutions, governments, and communities to design and deliver innovative, evidence-based solutions that advance sustainable development through inclusive economic empowerment.
+        </motion.p>
       </div>
       
       {/* Scroll Indicator */}
