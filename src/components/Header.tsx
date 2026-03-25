@@ -11,6 +11,11 @@ const navLinks = [
   { name: 'Contact', href: 'contact' }
 ];
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,7 +25,6 @@ export const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      // Update active link based on scroll position
       const sections = navLinks.map(link => document.getElementById(link.href));
       const scrollPosition = window.scrollY + 100;
       
@@ -69,15 +73,34 @@ export const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <motion.div 
-              className="text-ebcNavy font-extrabold text-2xl sm:text-3xl tracking-tighter cursor-pointer"
+              <motion.div 
+              className="h-16 sm:h-20 cursor-pointer flex items-center"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleLinkClick('home')}
             >
-              EBC <span className="text-ebcGold">.</span>
+              <img 
+                src="/src/assets/ebc-logo.png" 
+                alt="EBC Logo" 
+                className="h-full w-auto object-contain"
+                loading="lazy"
+              />
             </motion.div>
             
+            {/* Badge */}
+            <motion.div 
+              variants={itemVariants}
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
+              initial="hidden"
+              animate="visible"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ebcGold opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-ebcGold"></span>
+              </span>
+              <span className="text-sm font-medium">Strategic Advisory • Kenya • Africa & Beyond</span>
+            </motion.div>
+
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6 lg:gap-8">
               {navLinks.map((link) => (

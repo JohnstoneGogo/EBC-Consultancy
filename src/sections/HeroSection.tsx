@@ -141,6 +141,8 @@ export const HeroSection = () => {
             initial="hidden"
             animate="visible"
           >
+           
+
             {/* Badge */}
             <motion.div 
               variants={itemVariants}
@@ -150,7 +152,7 @@ export const HeroSection = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ebcGold opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-ebcGold"></span>
               </span>
-              <span className="text-sm font-medium">Strategic Advisory • Kenya • Africa</span>
+              <span className="text-sm font-medium">Strategic Insight • Innovative Solutions • Sustainable Impact</span>
             </motion.div>
             
             {/* Main Heading */}
