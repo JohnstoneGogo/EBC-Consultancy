@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
   { name: 'Home', href: 'home' },
+  { name: 'Our Approach', href: 'approach' },
   { name: 'About', href: 'about' },
   { name: 'Services', href: 'services' },
   { name: 'Learning Hub', href: 'learning-hub' },
@@ -21,39 +22,118 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
 
+  // Handle scroll background
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      
-      const sections = navLinks.map(link => document.getElementById(link.href));
-      const scrollPosition = window.scrollY + 100;
-      
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveLink(navLinks[i].href);
-          break;
-        }
-      }
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle active section detection with correct order
+  useEffect(() => {
+    const handleActiveSection = () => {
+      // Get all sections in the order they appear in the DOM
+      const sections = [];
+      for (const link of navLinks) {
+        const element = document.getElementById(link.href);
+        if (element) {
+          sections.push({
+            id: link.href,
+            element: element,
+            offsetTop: element.offsetTop,
+            offsetBottom: element.offsetTop + element.offsetHeight
+          });
+        }
+      }
+      
+      if (sections.length === 0) return;
+      
+      // Get current scroll position with header offset
+      const headerHeight = 80;
+      const scrollPosition = window.scrollY + headerHeight + 50;
+      
+      // Find which section is currently active based on scroll position
+      let currentSection = sections[0].id; // Default to first section
+      
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const nextSection = sections[i + 1];
+        
+        // If we're within the current section
+        if (scrollPosition >= section.offsetTop) {
+          // If this is the last section OR we haven't reached the next section yet
+          if (!nextSection || scrollPosition < nextSection.offsetTop) {
+            currentSection = section.id;
+            break;
+          }
+        }
+      }
+      
+      // Check if we're at the very bottom of the page
+      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) {
+        currentSection = 'contact';
+      }
+      
+      // Only update if different
+      if (currentSection !== activeLink) {
+        setActiveLink(currentSection);
+      }
+    };
+    
+    // Initial check with delay to ensure DOM is ready
+    setTimeout(handleActiveSection, 100);
+    
+    // Add scroll listener with throttling
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', handleActiveSection);
+    
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', handleActiveSection);
+    };
+  }, [activeLink]);
+
   const handleLinkClick = (href: string) => {
     setActiveLink(href);
     setIsMobileMenuOpen(false);
     const element = document.getElementById(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
   const handleGetStarted = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80;
+      const elementPosition = contactSection.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
     setIsMobileMenuOpen(false);
   };
@@ -63,18 +143,18 @@ export const Header = () => {
       <motion.header 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
-            : 'bg-white/80 backdrop-blur-sm border-b border-gray-100/50'
+            ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 py-2' 
+            : 'bg-white/80 backdrop-blur-sm border-b border-gray-100/50 py-3'
         }`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-              <motion.div 
-              className="h-16 sm:h-20 cursor-pointer flex items-center"
+            <motion.div 
+              className="h-12 sm:h-14 cursor-pointer flex items-center"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleLinkClick('home')}
@@ -90,24 +170,24 @@ export const Header = () => {
             {/* Badge */}
             <motion.div 
               variants={itemVariants}
-              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
+              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
               initial="hidden"
               animate="visible"
             >
-              <span className="relative flex h-2 w-2">
+              <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ebcGold opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-ebcGold"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-ebcGold"></span>
               </span>
-              <span className="text-sm font-medium">Strategic Advisory • Kenya • Africa & Beyond</span>
+              <span className="text-xs font-medium">Strategic Advisory • Kenya • Africa & Beyond</span>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            <nav className="hidden md:flex items-center gap-5 lg:gap-6">
               {navLinks.map((link) => (
                 <motion.a 
                   key={link.name} 
                   onClick={() => handleLinkClick(link.href)}
-                  className={`relative font-medium text-sm lg:text-base transition-colors cursor-pointer ${
+                  className={`relative font-medium text-sm transition-colors cursor-pointer ${
                     activeLink === link.href 
                       ? 'text-ebcGold' 
                       : 'text-ebcNavy/80 hover:text-ebcGold'
@@ -126,7 +206,7 @@ export const Header = () => {
                 </motion.a>
               ))}
               <motion.button 
-                className="bg-gradient-to-r from-ebcNavy to-ebcNavy/80 text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-ebcNavy to-ebcNavy/80 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleGetStarted}
@@ -141,7 +221,7 @@ export const Header = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileTap={{ scale: 0.95 }}
             >
-              {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              {isMobileMenuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
             </motion.button>
           </div>
         </div>

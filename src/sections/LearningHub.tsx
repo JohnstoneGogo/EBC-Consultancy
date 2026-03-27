@@ -108,24 +108,6 @@ const LearningHub: React.FC = () => {
           </div>
 
         </div>
-
-        {/* BOTTOM: Resource Library */}
-        <div className="mt-24 pt-12 border-t border-slate-100">
-          <div className="flex items-center gap-3 mb-10">
-            <div className="p-2 bg-ebcGold/10 rounded-lg">📂</div>
-            <h4 className="text-xl font-bold text-ebcNavy">Resource Library</h4>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 bg-slate-50 rounded-xl border border-transparent hover:border-ebcGold/30 hover:bg-white hover:shadow-md transition-all group">
-              <h5 className="font-bold text-ebcNavy group-hover:text-ebcGold transition-colors">VEEM Model Brief</h5>
-              <p className="text-xs text-ebcGray mt-2 mb-6">A 2-page executive summary of the framework.</p>
-              <button className="text-[11px] font-black uppercase tracking-wider text-ebcNavy">Download PDF ↓</button>
-            </div>
-            {/* Add more resource cards as needed */}
-          </div>
-        </div>
-
       </div>
     </section>
   );
