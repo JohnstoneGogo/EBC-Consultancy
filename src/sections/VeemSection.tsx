@@ -66,8 +66,8 @@ const resources = [
   },
   {
     id: 3,
-    title: "Youth Economic Empowerment Report",
-    description: "Comprehensive research on economic empowerment outcomes across four Kenyan counties.",
+    title: "Economic Empowerment Interventions",
+    description: "Each intervention has specific guidelines or curriculum, tools and SOP's tailored to the specific context.",
     icon: "📊",
     downloadLink: "#"
   },
