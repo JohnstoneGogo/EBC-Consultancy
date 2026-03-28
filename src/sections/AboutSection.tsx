@@ -125,7 +125,7 @@ src="/andrew.jpeg"
               <div className="flex items-start gap-3">
                 <FaGlobe className="text-ebcGold mt-1 flex-shrink-0" size={16} />
                 <p className="text-sm text-ebcGray/70">
-                  Represented Kenya at international scientific conferences on <strong className="text-ebcNavy">three continents</strong> (Canada, Sweden, USA)
+                  Represented Kenya at international scientific conferences on including  IAS 2022(Canada) AIDS Impact 2023 (Sweden) HIVRP4 2024 (Peru) CROI 2022 (USA)<strong className="text-ebcNavy">three continents</strong> (Canada, Sweden, USA)
                 </p>
               </div>
               <div className="flex items-start gap-3">
