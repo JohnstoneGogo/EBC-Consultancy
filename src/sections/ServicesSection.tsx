@@ -45,7 +45,7 @@ export const ServicesSection = () => {
       bgColor: "bg-amber-500/10",
       title: "Public Health Systems Strengthening",
       description: "Integrating economic empowerment into health service delivery to improve clinical outcomes and long-term well-being for adolescent girls and young women.",
-      tags: ["Health Integration", "DREAMS", "AGYW", "PEPFAR"],
+      tags: ["Health Integration", "Implementation Structure", "AGYW", "Financing"],
       tagColor: "bg-amber-500/10 text-amber-400"
     },
     {
