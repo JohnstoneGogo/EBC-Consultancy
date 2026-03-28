@@ -10,7 +10,7 @@ export const PartnersSection = () => {
       description: "Partnering with county and national governments to scale evidence-based programmes"
     },
     {
-      name: "International NGOs",
+      name: "Local & International NGOs",
       icon: <FaGlobe className="w-6 h-6" />,
       description: "Collaborating with global organizations to deliver localized impact"
     },

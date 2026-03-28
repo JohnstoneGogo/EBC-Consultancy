@@ -240,7 +240,7 @@ export const ServicesSection = () => {
         >
           <p className="text-sm uppercase tracking-wider text-white/50 mb-6">Trusted By Organizations Across Africa</p>
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-80">
-            {["Government Agencies", "International NGOs", "Development Partners", "Private Sector", "Community Organizations"].map((type) => (
+            {["Government Agencies", "Local & International NGOs", "Development Partners", "Private Sector", "Community Organizations"].map((type) => (
               <span key={type} className="text-white/60 text-sm font-medium hover:text-ebcGold transition-colors cursor-default">
                 {type}
               </span>
