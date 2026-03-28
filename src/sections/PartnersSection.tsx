@@ -40,14 +40,14 @@ export const PartnersSection = () => {
     {
       name: "Women's Economic Imperative",
       acronym: "WEI",
-      logo: "/src/assets/wei-logo.jpeg", // Path to WEI logo
+logo: "/wei-logo.jpeg",
       website: "https://weiforward.org",
       description: "Advancing women's economic empowerment across Africa"
     },
     {
       name: "Empowering Bridge Consulting",
       acronym: "EBC",
-      logo: "/src/assets/ebc-logo.png", // Path to EBC logo
+logo: "/ebc-logo.png", // Path to EBC logo
       website: "https://www.empoweringbridge.co.ke",
       description: "Strategic advisory for sustainable development"
     }
@@ -205,7 +205,7 @@ export const PartnersSection = () => {
              <div className="flex flex-col items-center text-center">
             <div className="w-28 h-28 bg-white rounded-2xl flex items-center justify-center mb-3 border border-gray-200 p-4 shadow-md">
               <img 
-                src="/src/assets/wei-logo.jpeg"
+src="/wei-logo.jpeg"
                 alt="WEI Logo"
                 className="w-full h-full object-contain"
               />
@@ -218,7 +218,7 @@ export const PartnersSection = () => {
           <div className="flex flex-col items-center text-center">
             <div className="w-28 h-28 bg-white rounded-2xl flex items-center justify-center mb-3 border border-gray-200 p-4 shadow-md">
               <img 
-                src="/src/assets/ebc-logo.png"
+src="/ebc-logo.png"
                 alt="EBC Logo"
                 className="w-full h-full object-contain"
               />

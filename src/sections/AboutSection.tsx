@@ -41,7 +41,7 @@ export const AboutSection = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <div className="aspect-[4/5] bg-gradient-to-br from-ebcNavy/10 to-ebcGold/10 p-2">
                   <img 
-                    src="/src/assets/andrew.jpeg" 
+src="/andrew.jpeg"
                     alt="Andrew Wanjala Wafula - Founder"
                     className="w-full h-full object-cover rounded-xl"
                     loading="eager"
