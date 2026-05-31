@@ -1,0 +1,2929 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+eslint.config.js
+index.html
+package.json
+postcss.config.mjs
+public/andrew.jpeg
+public/bridge2.svg
+public/bridge3.svg
+public/ebc-favicon.png
+public/ebc-logo.png
+public/favicon.svg
+public/icons.svg
+public/wei-logo.jpeg
+README.md
+src/App.tsx
+src/assets/andrew.jpeg
+src/assets/bridge1.svg
+src/assets/bridge2.svg
+src/assets/bridge3.svg
+src/assets/ebc-logo.png
+src/assets/hero.png
+src/assets/herobg.mp4
+src/assets/react.svg
+src/assets/vite.svg
+src/assets/wei-logo.jpeg
+src/components/Footer.tsx
+src/components/Header.tsx
+src/components/VeemStepCard.tsx
+src/index.css
+src/main.tsx
+src/sections/AboutSection.tsx
+src/sections/ContactSection.tsx
+src/sections/HeroCarousel.tsx
+src/sections/HeroSection.tsx
+src/sections/LearningHub.tsx
+src/sections/PartnersSection.tsx
+src/sections/ServicesSection.tsx
+src/sections/VeemSection.tsx
+src/types/index.ts
+tailwind.config.js
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+    },
+  },
+])
+</file>
+
+<file path="postcss.config.mjs">
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+</file>
+
+<file path="public/bridge2.svg">
+
+</file>
+
+<file path="public/bridge3.svg">
+
+</file>
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="README.md">
+# React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+</file>
+
+<file path="src/assets/bridge1.svg">
+
+</file>
+
+<file path="src/assets/bridge2.svg">
+
+</file>
+
+<file path="src/assets/bridge3.svg">
+
+</file>
+
+<file path="src/assets/react.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+</file>
+
+<file path="src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/Footer.tsx">
+// src/components/Footer.tsx
+import { FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
+
+export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/254726332000?text=Hello%2C%20I%27m%20interested%20in%20your%20consulting%20services', '_blank');
+  };
+
+  const handleEmailClick = (email: string) => {
+    window.location.href = `mailto:${email}`;
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:+254726332000';
+  };
+
+  return (
+    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300">
+      {/* Decorative top border with gold accent */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-ebcGold/40 via-ebcGold to-ebcGold/40" />
+      
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-4 gap-12">
+          
+          {/* Brand Column */}
+          <div className="space-y-4">
+            <div className="text-white font-extrabold text-3xl tracking-tighter">
+              EBC<span className="text-ebcGold">.</span>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Empowering communities through strategic insight, innovative solutions, and sustainable impact.
+            </p>
+            <div className="flex space-x-4 pt-4">
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-ebcGold transition-colors duration-300"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={20} />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-ebcGold transition-colors duration-300"
+                aria-label="Twitter"
+              >
+                <FaTwitter size={20} />
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-ebcGold transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <FaFacebook size={20} />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h4 className="text-white font-bold text-lg relative inline-block">
+              Quick Links
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-ebcGold"></span>
+            </h4>
+            <ul className="space-y-3">
+              {['Home', 'About', 'Services', 'Contact'].map((item) => (
+                <li key={item}>
+                  <a 
+                    href={`#${item.toLowerCase()}`} 
+                    className="text-gray-400 hover:text-ebcGold transition-colors duration-300 text-sm"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div className="space-y-4">
+            <h4 className="text-white font-bold text-lg relative inline-block">
+              Contact
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-ebcGold"></span>
+            </h4>
+            <div className="space-y-3">
+              <button 
+                onClick={() => handleEmailClick('andrew@empoweringbridge.co.ke')}
+                className="flex items-center gap-3 text-gray-400 hover:text-ebcGold transition-colors duration-300 group w-full"
+              >
+                <FaEnvelope className="text-ebcGold/60 group-hover:text-ebcGold" size={16} />
+                <span className="text-sm">andrew@empoweringbridge.co.ke</span>
+              </button>
+              <button 
+                onClick={() => handleEmailClick('info@empoweringbridge.co.ke')}
+                className="flex items-center gap-3 text-gray-400 hover:text-ebcGold transition-colors duration-300 group w-full"
+              >
+                <FaEnvelope className="text-ebcGold/60 group-hover:text-ebcGold" size={16} />
+                <span className="text-sm">info@empoweringbridge.co.ke</span>
+              </button>
+              <button 
+                onClick={handlePhoneClick}
+                className="flex items-center gap-3 text-gray-400 hover:text-ebcGold transition-colors duration-300 group w-full"
+              >
+                <FaPhone className="text-ebcGold/60 group-hover:text-ebcGold" size={16} />
+                <span className="text-sm">+254 726 332 000</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Location Column */}
+          <div className="space-y-4">
+            <h4 className="text-white font-bold text-lg relative inline-block">
+              Location
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-ebcGold"></span>
+            </h4>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <FaMapMarkerAlt className="text-ebcGold/60 mt-1" size={16} />
+                <div>
+                  <p className="text-gray-400 text-sm">Homabay, Kenya</p>
+                  <p className="text-gray-500 text-xs mt-1">Strategic Advisory Firm</p>
+                </div>
+              </div>
+              <p className="text-gray-500 text-xs italic">
+                Serving communities across East Africa
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar with Copyright */}
+        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-500 text-sm">
+            © {currentYear} Empowering Bridge Consulting. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-xs text-gray-500">
+            <a href="#" className="hover:text-ebcGold transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-ebcGold transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-ebcGold transition-colors">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+
+      {/* WhatsApp Floating Button */}
+      <button
+        onClick={handleWhatsAppClick}
+        className="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 group animate-bounce-slow"
+        aria-label="Contact us on WhatsApp"
+      >
+        <FaWhatsapp size={28} />
+        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+          Chat with us
+        </span>
+      </button>
+    </footer>
+  );
+};
+</file>
+
+<file path="src/components/VeemStepCard.tsx">
+// src/components/VeemStepCard.tsx
+import { motion } from 'framer-motion';
+import type { VeemStep } from '../types';
+
+export const VeemStepCard: React.FC<{ step: VeemStep }> = ({ step }) => {
+  return (
+    <motion.div 
+      className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col items-start gap-4 h-full"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: step.id * 0.1 }} // Staggered by ID
+      whileHover={{ 
+        y: -8, 
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }} // Elevate on hover
+    >
+      <div className="bg-ebcEmerald text-white font-bold text-lg w-12 h-12 rounded-full flex items-center justify-center">
+        {step.id}
+      </div>
+      <h3 className="font-bold text-lg text-ebcNavy">{step.title}</h3>
+      <p className="text-sm text-ebcGray leading-relaxed">{step.description}</p>
+    </motion.div>
+  );
+};
+</file>
+
+<file path="src/index.css">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</file>
+
+<file path="src/main.tsx">
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+</file>
+
+<file path="src/sections/ContactSection.tsx">
+// src/sections/ContactSection.tsx
+import { motion } from 'framer-motion';
+
+export const ContactSection = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <section id="contact" className="py-24 bg-gradient-to-b from-ebcNavy to-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-ebcGold/20 rounded-full mb-6 mx-auto"
+          >
+            <div className="w-2 h-2 bg-ebcGold rounded-full animate-pulse" />
+            <span className="text-ebcGold font-semibold text-sm tracking-wider uppercase">Get In Touch</span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-white/90 to-ebcGold/70 bg-clip-text text-transparent"
+          >
+            Let's Build Something <span className="text-ebcGold">Transformative</span>
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-16"
+          >
+            Partner with EBC to design and deliver evidence-based solutions that create sustainable impact.
+          </motion.p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl"
+          >
+            <h3 className="text-2xl font-bold mb-6">Start the Conversation</h3>
+            <form className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium mb-2">Full Name</label>
+                <input type="text" className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" placeholder="Your full name" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">Email</label>
+                <input type="email" className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" placeholder="your.email@example.com" />
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Organization</label>
+                  <input type="text" className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" placeholder="Your organization" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Phone (Optional)</label>
+                  <input type="tel" className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" placeholder="+254..." />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">Message</label>
+                <textarea rows={5} className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all resize-vertical" placeholder="Tell us about your project..." />
+              </div>
+              <motion.button
+                type="submit"
+                className="w-full bg-ebcGold text-ebcNavy px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Send Message
+              </motion.button>
+            </form>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Reach Out Directly</h3>
+              <p className="text-white/80 mb-8 leading-relaxed">Ready to discuss your project? Connect with our Principal Consultant.</p>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/10 transition-all group cursor-pointer">
+                <div className="w-12 h-12 bg-ebcGold/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-ebcGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.27 7.27c.883.883 2.317.883 3.2 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-semibold">Email</p>
+                  <a href="mailto:andrew@empoweringbridge.com" className="text-ebcGold hover:text-white transition-colors text-lg font-medium block group-hover:underline">andrew@empoweringbridge.com</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/10 transition-all group cursor-pointer">
+                <div className="w-12 h-12 bg-ebcEmerald/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-ebcEmerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 01 1.21-.502l4.493 1.498a1 1 0 01.684 .948V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-semibold">Phone</p>
+                  <a href="tel:+254722123456" className="text-ebcEmerald hover:text-white transition-colors text-lg font-medium block group-hover:underline">+254 722 123 456</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/10 transition-all group cursor-pointer">
+                <div className="w-12 h-12 bg-ebcGold/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-ebcGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 12.414a1.799 1.799 0 00-2.727 2.727l4.243 4.243a1.799 1.799 0 002.727-2.727zM5.105 6.375nM17.657 16.657L13.414 12.414a1.799 1.799 0 00-2.727 2.727l4.243 4.243a1.799 1.799 0 002.727-2.727z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-semibold">LinkedIn</p>
+                  <a href="#" className="text-ebcGold hover:text-white transition-colors text-lg font-medium block group-hover:underline">Andrew Wafula</a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="text-center">
+          <motion.button
+            onClick={scrollToTop}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-ebcGold text-ebcNavy px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 inline-flex items-center gap-2 mx-auto"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            ↑ Back to Top
+          </motion.button>
+        </div>
+      </div>
+    </section>
+  );
+};
+</file>
+
+<file path="src/sections/HeroCarousel.tsx">
+// src/sections/HeroCarousel.tsx
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
+const bridgeImages = [
+  'https://images.pexels.com/photos/1434939/pexels-photo-1434939.jpeg?auto=compress&cs=tinysrgb&w=1400&h=900&fit=crop',
+  'https://images.pexels.com/photos/428339/pexels-photo-428339.jpeg?auto=compress&cs=tinysrgb&w=1400&h=900&fit=crop',
+  'https://images.pexels.com/photos/4491675/pexels-photo-4491675.jpeg?auto=compress&cs=tinysrgb&w=1400&h=900&fit=crop'
+];
+
+export const HeroCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageErrors, setImageErrors] = useState<boolean[]>(new Array(bridgeImages.length).fill(false));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % bridgeImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleImageError = (index: number) => {
+    setImageErrors(prev => {
+      const newErrors = [...prev];
+      newErrors[index] = true;
+      return newErrors;
+    });
+  };
+
+  return (
+    <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
+      <AnimatePresence mode="wait">
+        {!imageErrors[currentIndex] ? (
+          <motion.img
+            key={currentIndex}
+            src={bridgeImages[currentIndex]}
+            alt="Bridge connecting communities"
+            className="w-full h-full object-cover object-center"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            onError={() => handleImageError(currentIndex)}
+          />
+        ) : (
+          <motion.div
+            key={currentIndex}
+            className="w-full h-full bg-gradient-to-br from-gray-900 to-gray-800"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }}
+          />
+        )}
+      </AnimatePresence>
+      
+      {/* Darker, more neutral gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/95" />
+      
+      {/* Optional: Add a subtle gold accent */}
+      <div className="absolute inset-0 opacity-20 bg-gradient-to-t from-ebcGold/10 via-transparent to-transparent" />
+    </div>
+  );
+};
+</file>
+
+<file path="src/types/index.ts">
+export interface VeemStep {
+  id: number;
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+export interface Service {
+  title: string;
+  description: string;
+  slug: string;
+}
+
+export interface NavLink {
+  name: string;
+  path: string;
+}
+</file>
+
+<file path="tailwind.config.js">
+/** @type {import('tailwindcss').Config} */
+
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        ebcNavy: '#0A0B82',     // Professionalism
+        ebcGold: '#C4A35A',     // Premium / Impact
+        ebcEmerald: '#2E8B57',  // Growth
+        ebcGray: '#333333',     // Text
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'], // Clean, modern font
+      },
+    },
+  },
+  plugins: [],
+}
+</file>
+
+<file path="tsconfig.app.json">
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2023",
+    "useDefineForClassFields": true,
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src"]
+}
+</file>
+
+<file path="tsconfig.json">
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+</file>
+
+<file path="tsconfig.node.json">
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "types": ["node"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["vite.config.ts"]
+}
+</file>
+
+<file path="vite.config.ts">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<link rel="icon" href="/ebc-favicon.png" sizes="any" type="image/png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ebc-consultancy</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="package.json">
+{
+  "name": "ebc-consultancy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-icons": "^5.6.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^24.12.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.0",
+    "vite": "^8.0.1"
+  }
+}
+</file>
+
+<file path="src/App.tsx">
+// src/App.tsx
+import { Header } from './components/Header';
+import { HeroSection } from './sections/HeroSection';
+import { VeemSection } from './sections/VeemSection';
+import { AboutSection } from './sections/AboutSection';
+import { ServicesSection } from './sections/ServicesSection';
+import { ContactSection } from './sections/ContactSection';
+import { PartnersSection } from './sections/PartnersSection';
+import LearningHub from './sections/LearningHub'; 
+import { Footer } from './components/Footer';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-gray-50 font-sans antialiased">
+      <Header />
+      <main>
+        <HeroSection />
+        <VeemSection /> 
+        <AboutSection />
+        <ServicesSection/>
+        <LearningHub />
+        <PartnersSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
+</file>
+
+<file path="src/sections/LearningHub.tsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const LearningHub: React.FC = () => {
+  return (
+    <section id="learning-hub" className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Section Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-ebcNavy text-sm font-bold tracking-[0.2em] uppercase mb-3">Knowledge Base</h2>
+          <h3 className="text-4xl md:text-5xl font-serif text-ebcNavy font-bold">Learning & Impact Hub</h3>
+          <div className="w-12 h-1 bg-ebcGold mx-auto mt-6" />
+        </motion.div>
+
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          
+          {/* LEFT: Testimonials (7 Columns) */}
+          <div className="lg:col-span-7 space-y-8">
+            <div className="mb-8">
+              <h4 className="text-2xl font-bold text-ebcNavy mb-4">Real Voices. Real Impact.</h4>
+              <p className="text-ebcGray leading-relaxed max-w-lg">
+                Unscripted stories of resilience and proof that strategic economic empowerment 
+                models like <span className="text-ebcEmerald font-semibold">VEEM</span> drive lasting change.
+              </p>
+            </div>
+
+            {/* Video Card - Premium Look */}
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="group bg-slate-50 border border-slate-200 p-6 rounded-2xl flex gap-6 items-center"
+            >
+              <div className="w-20 h-20 bg-ebcGold/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-ebcGold/30 transition-colors">
+                <span className="text-ebcGold text-2xl">▶</span>
+              </div>
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-ebcEmerald">Video Case Study</span>
+                <h5 className="text-lg font-bold text-ebcNavy mt-1">AYP Program: Changing Futures</h5>
+                <a href="https://linkedin.com" className="text-sm text-ebcGold font-semibold hover:underline mt-2 inline-block">Watch on LinkedIn →</a>
+              </div>
+            </motion.div>
+
+            {/* Reflection Card */}
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="bg-white border border-slate-100 shadow-sm p-6 rounded-2xl"
+            >
+              <h5 className="font-bold text-ebcNavy mb-2">📝 Lessons from the Field</h5>
+              <p className="text-sm text-ebcGray mb-4">What we learned through co-creation with youth and women in rural markets.</p>
+              <button className="text-ebcEmerald text-sm font-bold border-b-2 border-ebcEmerald/20 hover:border-ebcEmerald transition-all">
+                Read the Reflection
+              </button>
+            </motion.div>
+
+            <button className="mt-4 px-8 py-3 bg-ebcNavy text-white rounded-lg text-sm font-bold hover:bg-ebcNavy/90 transition-all shadow-lg shadow-ebcNavy/20">
+              Share Your Story
+            </button>
+          </div>
+
+          {/* RIGHT: Masterclasses (5 Columns) - The "Callout" Section */}
+          <div className="lg:col-span-5">
+            <motion.div 
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="bg-ebcNavy p-8 md:p-10 rounded-[2rem] text-white relative overflow-hidden"
+            >
+              {/* Decorative background element */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-ebcGold/10 rounded-full -mr-16 -mt-16 blur-3xl" />
+              
+              <h4 className="text-2xl font-bold mb-4">Advisory Masterclasses</h4>
+              <p className="text-blue-100/80 text-sm mb-8 leading-relaxed">
+                Self-paced lessons designed for development professionals and NGO leaders.
+              </p>
+
+              {/* Featured Class Card */}
+              <div className="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-xl mb-6">
+                <div className="inline-block bg-ebcEmerald text-[10px] font-black px-2 py-1 rounded mb-4">COMING SOON</div>
+                <h5 className="font-bold text-lg text-ebcGold mb-2">Introduction to VEEM</h5>
+                <p className="text-xs text-blue-100/70 mb-4 italic italic">Transitioning youth from vulnerability to resilience.</p>
+                <div className="flex items-center gap-4 text-[11px] font-bold text-white/60">
+                  <span>⏱ 45 Minutes</span>
+                  <span>📂 4 Video Modules</span>
+                </div>
+              </div>
+
+              {/* Future Classes List */}
+              <div className="space-y-4 mb-10 opacity-60">
+                <div className="flex items-center gap-3 text-sm border-b border-white/10 pb-2">
+                  <span className="text-ebcGold text-xs">🔒</span>
+                  <span>Participatory Market Assessment</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="text-ebcGold text-xs">🔒</span>
+                  <span>Multi-Sector Partnerships</span>
+                </div>
+              </div>
+
+              <button className="w-full py-4 bg-ebcGold text-white font-bold rounded-xl hover:scale-[1.02] transition-transform shadow-xl shadow-black/20">
+                Notify Me of New Lessons
+              </button>
+            </motion.div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LearningHub;
+</file>
+
+<file path="src/sections/PartnersSection.tsx">
+// src/sections/PartnersSection.tsx
+import { motion } from 'framer-motion';
+import { FaHandshake, FaHeart, FaChartLine, FaBuilding, FaUsers, FaGlobe, FaExternalLinkAlt } from 'react-icons/fa';
+
+export const PartnersSection = () => {
+  const partners = [
+    {
+      name: "Government Agencies",
+      icon: <FaBuilding className="w-6 h-6" />,
+      description: "Partnering with county and national governments to scale evidence-based programmes"
+    },
+    {
+      name: "Local & International NGOs",
+      icon: <FaGlobe className="w-6 h-6" />,
+      description: "Collaborating with global organizations to deliver localized impact"
+    },
+    {
+      name: "Development Partners",
+      icon: <FaHandshake className="w-6 h-6" />,
+      description: "Working with donors and development agencies to maximize investment impact"
+    },
+    {
+      name: "Private Sector",
+      icon: <FaChartLine className="w-6 h-6" />,
+      description: "Engaging businesses to create market linkages and employment opportunities"
+    },
+    {
+      name: "Community Organizations",
+      icon: <FaUsers className="w-6 h-6" />,
+      description: "Strengthening local organizations to deliver sustainable solutions"
+    },
+    {
+      name: "Health Institutions",
+      icon: <FaHeart className="w-6 h-6" />,
+      description: "Integrating economic empowerment with health service delivery"
+    }
+  ];
+
+  const currentPartners = [
+    {
+      name: "Women's Economic Imperative",
+      acronym: "WEI",
+logo: "/wei-logo.jpeg",
+      website: "https://weiforward.org",
+      description: "Advancing women's economic empowerment across Africa"
+    },
+    {
+      name: "Empowering Bridge Consulting",
+      acronym: "EBC",
+logo: "/ebc-logo.png", // Path to EBC logo
+      website: "https://www.empoweringbridge.co.ke",
+      description: "Strategic advisory for sustainable development"
+    }
+  ];
+
+  const upcomingPartners = [
+    {
+      name: "LVCT Health",
+      acronym: "LVCT",
+      logo: "🏥", // Placeholder until logo is available
+      description: "Health systems strengthening and HIV programs"
+    },
+    {
+      name: "Homa Bay County Government",
+      acronym: "HBCG",
+      logo: "🏛️", // Placeholder until logo is available
+      description: "County leadership and local implementation"
+    },
+    {
+      name: "Local Implementing Partners",
+      acronym: "LIPs",
+      logo: "🤝", // Placeholder until logo is available
+      description: "Community-based organizations and local leaders"
+    }
+  ];
+
+  return (
+    <section id="partners" className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-ebcGold/10 rounded-full mb-4">
+            <div className="w-2 h-2 bg-ebcGold rounded-full animate-pulse" />
+            <span className="text-ebcGold font-semibold text-sm tracking-wider uppercase">Our Ecosystem</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-ebcNavy mb-4">Who We Work With</h2>
+          <p className="text-lg text-ebcGray/80 leading-relaxed">
+            Building collaborative partnerships to create sustainable impact across sectors
+          </p>
+        </motion.div>
+
+        {/* Partners Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"
+        >
+          {partners.map((partner, index) => (
+            <motion.div
+              key={partner.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              whileHover={{ y: -5 }}
+              className="group bg-white rounded-xl p-6 border border-gray-100 hover:border-ebcGold/30 hover:shadow-xl transition-all duration-300"
+            >
+              <div className={`w-12 h-12 rounded-lg bg-ebcGold/10 flex items-center justify-center text-ebcGold mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                {partner.icon}
+              </div>
+              <h3 className="text-lg font-bold text-ebcNavy mb-2 group-hover:text-ebcGold transition-colors">
+                {partner.name}
+              </h3>
+              <p className="text-sm text-ebcGray/70 leading-relaxed">
+                {partner.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Current Partners Logo Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-ebcNavy mb-2">Current Partners</h3>
+            <div className="w-12 h-0.5 bg-ebcGold mx-auto" />
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {currentPartners.map((partner, index) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-2xl p-8 border border-gray-100 hover:border-ebcGold/30 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-ebcGold/10 to-ebcGold/5 rounded-2xl flex items-center justify-center mb-4 border-2 border-ebcGold/20 p-4">
+                    <img 
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold text-ebcNavy mb-1">{partner.name}</h4>
+                  <p className="text-sm text-ebcGold font-semibold mb-2">{partner.acronym}</p>
+                  <p className="text-sm text-ebcGray/70 mb-4">{partner.description}</p>
+                  <a 
+                    href={partner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-ebcGold hover:text-ebcEmerald transition-colors text-sm font-medium"
+                  >
+                    <span>Visit Website</span>
+                    <FaExternalLinkAlt size={12} />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Strategic Partnership Announcement */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="relative bg-gradient-to-br from-ebcNavy to-ebcNavy/95 rounded-2xl overflow-hidden mb-16"
+        >
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-ebcGold/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-ebcEmerald/10 rounded-full blur-3xl" />
+          
+          <div className="relative z-10 p-8 md:p-12">
+            {/* Announcement Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-ebcGold/20 backdrop-blur-sm rounded-full mb-6">
+              <FaHandshake className="w-4 h-4 text-ebcGold" />
+              <span className="text-ebcGold font-semibold text-sm tracking-wider uppercase">Strategic Partnership Announcement</span>
+            </div>
+            
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              Advancing Youth & Women's Economic Empowerment
+            </h3>
+            
+            {/* Partner Logos Section */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+             <div className="flex flex-col items-center text-center">
+            <div className="w-28 h-28 bg-white rounded-2xl flex items-center justify-center mb-3 border border-gray-200 p-4 shadow-md">
+              <img 
+src="/wei-logo.jpeg"
+                alt="WEI Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <p className="text-white/80 text-sm font-medium">Women's Economic Imperative</p>
+          </div>
+
+          <div className="text-ebcGold text-2xl md:text-3xl">+</div>
+
+          <div className="flex flex-col items-center text-center">
+            <div className="w-28 h-28 bg-white rounded-2xl flex items-center justify-center mb-3 border border-gray-200 p-4 shadow-md">
+              <img 
+src="/ebc-logo.png"
+                alt="EBC Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <p className="text-white/80 text-sm font-medium">Empowering Bridge Consulting</p>
+          </div>
+            </div>
+            
+            <p className="text-white/90 text-lg leading-relaxed mb-6">
+              We are excited to announce a new partnership between <strong className="text-ebcGold">Women's Economic Imperative (WEI)</strong> and 
+              <strong className="text-ebcGold"> Empowering Bridge Consulting (EBC)</strong> to advance youth and women's economic empowerment in Kenya and beyond.
+            </p>
+            
+            {/* Current Focus */}
+            <div className="bg-white/5 rounded-xl p-6 mb-6 border-l-4 border-ebcGold">
+              <h4 className="text-xl font-bold text-white mb-3">Current Focus: Homa Bay Economic Empowerment Initiative (HEEI) Program</h4>
+              <p className="text-white/80 leading-relaxed mb-4">
+                Our first collaborative initiative targets <strong className="text-ebcGold">Homa Bay County</strong> — one of Kenya's highest HIV-burden counties — 
+                where economic vulnerability and health outcomes intersect. Through HEEI, we are designing integrated solutions that address both economic 
+                empowerment and health systems strengthening.
+              </p>
+              <div className="flex flex-wrap gap-4 text-sm">
+                <a 
+                  href="https://weiforward.org" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-ebcGold hover:text-white transition-colors"
+                >
+                  <span>weiforward.org</span>
+                  <FaExternalLinkAlt size={12} />
+                </a>
+                <span className="text-white/40">|</span>
+                <a 
+                  href="https://www.empoweringbridge.co.ke" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-ebcGold hover:text-white transition-colors"
+                >
+                  <span>www.empoweringbridge.co.ke</span>
+                  <FaExternalLinkAlt size={12} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Upcoming Partners Logo Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-ebcEmerald/10 rounded-full mb-3">
+              <span className="w-2 h-2 bg-ebcEmerald rounded-full animate-pulse" />
+              <span className="text-ebcEmerald font-semibold text-sm tracking-wider uppercase">Coming Soon</span>
+            </div>
+            <h3 className="text-2xl font-bold text-ebcNavy mb-2">Upcoming Partnerships</h3>
+            <div className="w-12 h-0.5 bg-ebcEmerald mx-auto" />
+            <p className="text-ebcGray/70 text-sm mt-3">Expanding our collaborative network for greater impact</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {upcomingPartners.map((partner, index) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="group bg-white rounded-xl p-6 border border-gray-100 hover:border-ebcEmerald/30 hover:shadow-xl transition-all duration-300 text-center"
+              >
+                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-ebcEmerald/10 to-ebcEmerald/5 rounded-2xl flex items-center justify-center mb-4 border-2 border-ebcEmerald/20 group-hover:border-ebcEmerald/50 transition-all">
+                  <span className="text-3xl">{partner.logo}</span>
+                </div>
+                <h4 className="text-lg font-bold text-ebcNavy mb-1 group-hover:text-ebcEmerald transition-colors">
+                  {partner.name}
+                </h4>
+                <p className="text-xs text-ebcGold font-semibold mb-2">{partner.acronym}</p>
+                <p className="text-sm text-ebcGray/70">{partner.description}</p>
+                <div className="mt-4 inline-block px-3 py-1 bg-ebcEmerald/10 rounded-full">
+                  <span className="text-xs text-ebcEmerald font-medium">In Discussion</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Impact Metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
+        >
+          <div className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all">
+            <div className="text-3xl font-bold text-ebcGold mb-2">8+</div>
+            <p className="text-ebcGray/70 text-sm">Years of Partnership Experience</p>
+          </div>
+          <div className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all">
+            <div className="text-3xl font-bold text-ebcGold mb-2">4+</div>
+            <p className="text-ebcGray/70 text-sm">Kenyan Counties Reached</p>
+          </div>
+          <div className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all">
+            <div className="text-3xl font-bold text-ebcGold mb-2">15+</div>
+            <p className="text-ebcGray/70 text-sm">Active Partners & Collaborators</p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+</file>
+
+<file path="src/sections/VeemSection.tsx">
+// src/sections/VeemSection.tsx
+import { motion } from 'framer-motion';
+import type { JSX } from 'react';
+import { FaChartLine, FaPiggyBank, FaLightbulb, FaHandsHelping, FaLink, FaInfoCircle } from 'react-icons/fa';
+
+interface VeemStep {
+  id: number;
+  title: string;
+  description: string;
+  icon: JSX.Element;
+  color: string;
+}
+
+const steps: VeemStep[] = [
+  { 
+    id: 1, 
+    title: 'Market Assessment', 
+    description: 'We begin by understanding local economic realities, identifying viable economic sectors and genuine opportunities then designed intervention through co-creation with beneficiaries.',
+    icon: <FaChartLine className="w-6 h-6" />,
+    color: 'from-emerald-500 to-teal-500'
+  },
+  { 
+    id: 2, 
+    title: 'Financial Capability', 
+    description: 'Participants gain financial literacy, join savings groups, and access microfinance — building the foundation for economic decision-making.',
+    icon: <FaPiggyBank className="w-6 h-6" />,
+    color: 'from-amber-500 to-orange-500'
+  },
+  { 
+    id: 3, 
+    title: 'Skills & Entrepreneurship', 
+    description: 'Participants get skills on developing business plan through Entrepreneurship training, market-relevant vocational training and business start-up support equip participants with tangible capabilities.',
+    icon: <FaLightbulb className="w-6 h-6" />,
+    color: 'from-sky-500 to-blue-500'
+  },
+  { 
+    id: 4, 
+    title: 'Mentorship & Networks', 
+    description: 'Ongoing coaching and network access ensure businesses survive and thrive beyond the initial training.',
+    icon: <FaHandsHelping className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500'
+  },
+  { 
+    id: 5, 
+    title: 'Linkages to Opportunity', 
+    description: 'Finally, we connect graduates to employment, markets, capital, and social protection — completing the transition to resilience.',
+    icon: <FaLink className="w-6 h-6" />,
+    color: 'from-ebcGold to-ebcEmerald'
+  },
+];
+
+const resources = [
+  {
+    id: 1,
+    title: "VEEM Model Brief",
+    description: "A 2-page executive summary of the framework showing how VEEM transitions youth from vulnerability to empowerment.",
+    icon: "📄",
+    downloadLink: "#"
+  },
+  {
+    id: 2,
+    title: "Market Assessment Toolkit",
+    description: "Practical tools and methodologies for conducting participatory market assessments in rural communities.",
+    icon: "🛠️",
+    downloadLink: "#"
+  },
+  {
+    id: 3,
+    title: "Economic Empowerment Interventions",
+    description: "Each intervention has specific guidelines or curriculum, tools and SOP's tailored to the specific context.",
+    icon: "📊",
+    downloadLink: "#"
+  },
+  {
+    id: 4,
+    title: "Monitoring & Evaluation Framework",
+    description: "MEAL systems designed specifically for economic empowerment programmes targeting youth and women.",
+    icon: "📈",
+    downloadLink: "#"
+  },
+  {
+    id: 5,
+    title: "Partnership Guide",
+    description: "Best practices for building multi-sector partnerships that scale impact and ensure sustainability.",
+    icon: "🤝",
+    downloadLink: "#"
+  },
+  {
+    id: 6,
+    title: "VEEM Implementation Manual",
+    description: "Step-by-step guide for implementing the Vukisha Economic Empowerment Model in development contexts.",
+    icon: "📘",
+    downloadLink: "#"
+  }
+];
+
+export const VeemSection = () => {
+  return (
+    <section id="approach" className="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-4xl mx-auto mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-ebcGold/10 rounded-full mb-4">
+            <div className="w-2 h-2 bg-ebcGold rounded-full animate-pulse" />
+            <span className="text-ebcGold font-semibold text-sm tracking-wider uppercase">Our Methodology</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-ebcNavy mb-4">Our Approach</h2>
+          <p className="text-lg text-ebcGray/80 leading-relaxed">
+            <span className="text-ebcEmerald font-bold">The Vukisha Economic Empowerment Model (VEEM)</span>
+          </p>
+          <p className="text-xl md:text-2xl font-semibold text-ebcNavy mt-2">
+            A Proven Pathway from Vulnerability to Resilience
+          </p>
+        </motion.div>
+
+        {/* VEEM Introduction */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl mx-auto text-center mb-16"
+        >
+          <p className="text-ebcGray/80 leading-relaxed mb-6">
+            VEEM is a tested empowerment framework — refined over 8 years of implementation — designed to transition vulnerable young people from economic dependency to resilience. 
+            Our five core components work in sequence and in synergy:
+          </p>
+        </motion.div>
+
+        {/* VEEM Steps Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+            >
+              {/* Gradient Top Border */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${step.color}`} />
+              
+              <div className="p-8">
+                {/* Icon and Number */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    {step.icon}
+                  </div>
+                  <span className="text-5xl font-bold text-gray-100 group-hover:text-ebcGold/20 transition-colors">
+                    {String(step.id).padStart(2, '0')}
+                  </span>
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-xl font-bold text-ebcNavy mb-3 group-hover:text-ebcGold transition-colors">
+                  {step.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-ebcGray/70 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* The Meaning of Vukisha Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="bg-gradient-to-br from-ebcNavy to-ebcNavy/95 rounded-2xl p-8 md:p-10 mb-16 relative overflow-hidden"
+        >
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-ebcGold/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-ebcEmerald/10 rounded-full blur-3xl" />
+          
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-ebcGold/20 backdrop-blur-sm rounded-full mb-6">
+              <FaInfoCircle className="w-4 h-4 text-ebcGold" />
+              <span className="text-ebcGold font-semibold text-sm tracking-wider uppercase">The Meaning of Vukisha</span>
+            </div>
+            
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <span className="text-ebcGold">"Vukisha"</span> — To Cross Over
+            </h3>
+            
+            <p className="text-white/80 text-lg leading-relaxed mb-6 max-w-3xl">
+              The word <strong className="text-ebcGold">"Vukisha"</strong> is derived from the Swahili verb <strong className="text-ebcGold">"kuvuka,"</strong> which means <strong>"to cross"</strong> or <strong>"to transition."</strong>
+            </p>
+            
+            <p className="text-white/70 mb-6 max-w-3xl">
+              In the context of VEEM, it symbolizes:
+            </p>
+            
+            <div className="grid sm:grid-cols-3 gap-4 mb-6 max-w-4xl">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-ebcGold/50 transition-all">
+                <div className="text-3xl mb-2">🌉</div>
+                <p className="text-white/80 text-sm">Crossing from vulnerability to empowerment</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-ebcGold/50 transition-all">
+                <div className="text-3xl mb-2">🚀</div>
+                <p className="text-white/80 text-sm">Transitioning from economic dependency to independence</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-ebcGold/50 transition-all">
+                <div className="text-3xl mb-2">🌅</div>
+                <p className="text-white/80 text-sm">Moving from surviving to thriving</p>
+              </div>
+            </div>
+            
+            <p className="text-white/70 text-sm italic border-l-2 border-ebcGold pl-4 max-w-3xl">
+              Just as crossing a river takes you from one shore to a new destination, Vukisha represents the journey of young people and women crossing over into a new reality of economic opportunity and sustained well-being.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Impact Results Section - NEW */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mb-16"
+        >
+          {/* Main Result Statement */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="bg-gradient-to-r from-ebcGold/10 to-ebcEmerald/10 rounded-2xl p-8 border border-ebcGold/20">
+              <p className="text-xl md:text-2xl text-ebcNavy leading-relaxed">
+                The result: Over <strong className="text-ebcGold text-2xl md:text-3xl">6,000 young women</strong> in Homa Bay have transitioned through VEEM — gaining not just income, but dignity, agency, and long-term economic security.
+              </p>
+            </div>
+          </div>
+          
+          {/* Impact Stats Strip */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 text-center hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-emerald-600 mb-2">6,000+</div>
+              <div className="text-xs md:text-sm text-gray-600 font-medium">Young women reached in Homa Bay</div>
+            </div>
+            <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-6 text-center hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-amber-600 mb-2">3,626</div>
+              <div className="text-xs md:text-sm text-gray-600 font-medium">Entrepreneurship coaching beneficiaries</div>
+            </div>
+            <div className="bg-gradient-to-br from-rose-50 to-rose-100 p-6 text-center hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-rose-600 mb-2">1,249</div>
+              <div className="text-xs md:text-sm text-gray-600 font-medium">Vocational training graduates</div>
+            </div>
+            <div className="bg-gradient-to-br from-sky-50 to-sky-100 p-6 text-center hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-sky-600 mb-2">749</div>
+              <div className="text-xs md:text-sm text-gray-600 font-medium">Business start-up kits distributed</div>
+            </div>
+            <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 text-center hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">1,248</div>
+              <div className="text-xs md:text-sm text-gray-600 font-medium">Linked to savings & microfinance</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 text-center hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">410</div>
+              <div className="text-xs md:text-sm text-gray-600 font-medium">Linked to employment</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Resource Library Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="pt-8"
+        >
+          {/* Resource Library Header */}
+          <div className="flex items-center gap-3 mb-10">
+            <div className="p-3 bg-ebcGold/10 rounded-xl">
+              <span className="text-2xl">📚</span>
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-ebcNavy">Resource Library</h3>
+              <p className="text-ebcGray/70 text-sm mt-1">
+                Evidence-based tools, guides, and publications from our work
+              </p>
+            </div>
+          </div>
+          
+          {/* Resources Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {resources.map((resource, index) => (
+              <motion.div
+                key={resource.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                whileHover={{ y: -5 }}
+                className="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:border-ebcGold/30"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-3xl">{resource.icon}</div>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-xs text-ebcGold font-semibold bg-ebcGold/10 px-2 py-1 rounded-full">
+                      Free Download
+                    </span>
+                  </div>
+                </div>
+                <h4 className="text-lg font-bold text-ebcNavy mb-2 group-hover:text-ebcGold transition-colors">
+                  {resource.title}
+                </h4>
+                <p className="text-sm text-ebcGray/70 leading-relaxed mb-6">
+                  {resource.description}
+                </p>
+                <button 
+                  onClick={() => window.open(resource.downloadLink, '_blank')}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-ebcGold hover:text-ebcEmerald transition-colors group/btn"
+                >
+                  <span>Download Resource</span>
+                  <span className="group-hover/btn:translate-x-1 transition-transform">↓</span>
+                </button>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Additional Resource Callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-12 p-6 bg-gradient-to-r from-ebcGold/5 to-ebcEmerald/5 rounded-xl border border-ebcGold/20 text-center"
+          >
+            <p className="text-ebcGray/80 text-sm mb-3">
+              Looking for something specific? We're building our resource library with tools from our programmes across Kenya.
+            </p>
+            <button className="text-ebcGold font-semibold text-sm hover:text-ebcEmerald transition-colors inline-flex items-center gap-2">
+              <span>Request a specific resource</span>
+              <span>→</span>
+            </button>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+</file>
+
+<file path="src/components/Header.tsx">
+// src/components/Header.tsx
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+
+const navLinks = [
+  { name: 'Home', href: 'home' },
+  { name: 'Our Approach', href: 'approach' },
+  { name: 'About', href: 'about' },
+  { name: 'Services', href: 'services' },
+  { name: 'Learning Hub', href: 'learning-hub' },
+  { name: 'Contact', href: 'contact' }
+];
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+export const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('home');
+
+  // Handle scroll background
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Handle active section detection with correct order
+  useEffect(() => {
+    const handleActiveSection = () => {
+      // Get all sections in the order they appear in the DOM
+      const sections = [];
+      for (const link of navLinks) {
+        const element = document.getElementById(link.href);
+        if (element) {
+          sections.push({
+            id: link.href,
+            element: element,
+            offsetTop: element.offsetTop,
+            offsetBottom: element.offsetTop + element.offsetHeight
+          });
+        }
+      }
+      
+      if (sections.length === 0) return;
+      
+      // Get current scroll position with header offset
+      const headerHeight = 80;
+      const scrollPosition = window.scrollY + headerHeight + 50;
+      
+      // Find which section is currently active based on scroll position
+      let currentSection = sections[0].id; // Default to first section
+      
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const nextSection = sections[i + 1];
+        
+        // If we're within the current section
+        if (scrollPosition >= section.offsetTop) {
+          // If this is the last section OR we haven't reached the next section yet
+          if (!nextSection || scrollPosition < nextSection.offsetTop) {
+            currentSection = section.id;
+            break;
+          }
+        }
+      }
+      
+      // Check if we're at the very bottom of the page
+      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) {
+        currentSection = 'contact';
+      }
+      
+      // Only update if different
+      if (currentSection !== activeLink) {
+        setActiveLink(currentSection);
+      }
+    };
+    
+    // Initial check with delay to ensure DOM is ready
+    setTimeout(handleActiveSection, 100);
+    
+    // Add scroll listener with throttling
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', handleActiveSection);
+    
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', handleActiveSection);
+    };
+  }, [activeLink]);
+
+  const handleLinkClick = (href: string) => {
+    setActiveLink(href);
+    setIsMobileMenuOpen(false);
+    const element = document.getElementById(href);
+    if (element) {
+      const headerHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleGetStarted = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const headerHeight = 80;
+      const elementPosition = contactSection.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <>
+      <motion.header 
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 py-2' 
+            : 'bg-white/80 backdrop-blur-sm border-b border-gray-100/50 py-3'
+        }`}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <motion.div 
+              className="h-12 sm:h-14 cursor-pointer flex items-center"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => handleLinkClick('home')}
+            >
+              <img 
+src="/ebc-logo.png"
+                alt="EBC Logo" 
+                className="h-full w-auto object-contain"
+                loading="lazy"
+              />
+            </motion.div>
+            
+            {/* Badge */}
+            <motion.div 
+              variants={itemVariants}
+              className="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
+              initial="hidden"
+              animate="visible"
+            >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ebcGold opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-ebcGold"></span>
+              </span>
+              <span className="text-xs font-medium">Strategic Advisory • Kenya • Africa & Beyond</span>
+            </motion.div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-5 lg:gap-6">
+              {navLinks.map((link) => (
+                <motion.a 
+                  key={link.name} 
+                  onClick={() => handleLinkClick(link.href)}
+                  className={`relative font-medium text-sm transition-colors cursor-pointer ${
+                    activeLink === link.href 
+                      ? 'text-ebcGold' 
+                      : 'text-ebcNavy/80 hover:text-ebcGold'
+                  }`}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                >
+                  {link.name}
+                  {activeLink === link.href && (
+                    <motion.div
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-ebcGold"
+                      layoutId="activeUnderline"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </motion.a>
+              ))}
+              <motion.button 
+                className="bg-gradient-to-r from-ebcNavy to-ebcNavy/80 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleGetStarted}
+              >
+                Get Started
+              </motion.button>
+            </nav>
+            
+            {/* Mobile Menu Button */}
+            <motion.button 
+              className="md:hidden text-ebcNavy p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              whileTap={{ scale: 0.95 }}
+            >
+              {isMobileMenuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+            </motion.button>
+          </div>
+        </div>
+      </motion.header>
+      
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            <motion.div
+              className="fixed top-0 right-0 h-full w-64 bg-white z-50 md:hidden shadow-2xl"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            >
+              <div className="pt-20 pb-6 px-6">
+                <div className="flex flex-col space-y-4">
+                  {navLinks.map((link) => (
+                    <motion.a
+                      key={link.name}
+                      onClick={() => handleLinkClick(link.href)}
+                      className={`py-2 text-lg font-medium transition-colors cursor-pointer ${
+                        activeLink === link.href
+                          ? 'text-ebcGold border-l-4 border-ebcGold pl-3'
+                          : 'text-ebcNavy/80 hover:text-ebcGold pl-4'
+                      }`}
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  ))}
+                  <motion.button
+                    className="mt-4 bg-gradient-to-r from-ebcNavy to-ebcNavy/80 text-white px-6 py-3 rounded-full font-semibold shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={handleGetStarted}
+                  >
+                    Get Started
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+</file>
+
+<file path="src/sections/HeroSection.tsx">
+// src/sections/HeroSection.tsx
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaArrowRight, FaPlay } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0 
+  }
+};
+
+// Slider images
+const sliderImages = [
+  {
+    id: 0,
+    url: 'https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg',
+    alt: 'Women empowerment Kenya'
+  },
+  {
+    id: 1,
+    url: 'https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg',
+    alt: 'Community development Africa'
+  },
+  {
+    id: 2,
+    url: 'https://images.pexels.com/photos/28560576/pexels-photo-28560576.jpeg',
+    alt: 'Youth skills training'
+  },
+  {
+    id: 3,
+    url: 'https://images.pexels.com/photos/1381790/pexels-photo-1381790.jpeg',
+    alt: 'Women economic empowerment Africa'
+  }
+];
+
+export const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const particlePositions = Array.from({ length: 8 }, (_, i) => ({
+    x: 50 + i * 40,
+    duration: 2.0 + i * 0.3
+  }));
+
+  return (
+    <section 
+      id="home" 
+      className="relative h-screen text-white overflow-hidden"
+    >
+      {/* SLIDER BACKGROUND - Rotating Images */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            className="absolute inset-0 w-full h-full"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+          >
+            <img
+              src={sliderImages[currentSlide].url}
+              alt={sliderImages[currentSlide].alt}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
+        
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Gradient overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+      </div>
+      
+      {/* Main Content Area */}
+      <div className="relative z-10 h-full flex flex-col">
+        {/* Top spacer - Reduced to match smaller header */}
+        <div className="h-20 lg:h-24" />
+        
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col justify-center">
+          <div className="max-w-7xl mx-auto px-6 w-full">
+            <div className="grid lg:grid-cols-12 gap-12 items-start">
+              
+              {/* Left Content */}
+              <motion.div 
+                className="lg:col-span-7 space-y-6"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                {/* Badge */}
+                <motion.div 
+                  variants={itemVariants}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ebcGold opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-ebcGold"></span>
+                  </span>
+                  <span className="text-sm font-medium">Strategic Insight • Innovative Solutions • Sustainable Impact</span>
+                </motion.div>
+                
+                {/* Main Heading */}
+                <motion.h1 
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                  variants={itemVariants}
+                >
+                  Building Bridges from{' '}
+                  <span className="relative inline-block">
+                    <span className="text-ebcGold relative z-10">Vulnerability</span>
+                    <motion.span 
+                      className="absolute bottom-2 left-0 w-full h-3 bg-ebcGold/30 -z-0"
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ delay: 0.8, duration: 0.6 }}
+                    />
+                  </span>{' '}
+                  to Empowerment
+                </motion.h1>
+              </motion.div>
+              
+              {/* Right Column - Bridge Visual */}
+              <motion.div 
+                className="lg:col-span-5"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              >
+                <div className="relative h-80 bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-6 backdrop-blur-sm overflow-hidden">
+                  {/* Animated Background Pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 left-0 w-64 h-64 bg-ebcGold rounded-full blur-3xl animate-pulse" />
+                    <div className="absolute bottom-0 right-0 w-64 h-64 bg-ebcEmerald rounded-full blur-3xl animate-pulse delay-1000" />
+                  </div>
+                  
+                  {/* Bridge Visualization */}
+                  <div className="relative h-full flex flex-col items-center justify-center">
+                    {/* Bridge Arc */}
+                    <svg className="absolute w-full h-full" viewBox="0 0 400 300">
+                      <motion.path
+                        d="M 50,250 Q 200,150 350,250"
+                        stroke="url(#gradient)"
+                        strokeWidth="4"
+                        fill="none"
+                        strokeLinecap="round"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 1.5, delay: 0.8 }}
+                      />
+                      <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#C4A35A" />
+                          <stop offset="50%" stopColor="#2E8B57" />
+                          <stop offset="100%" stopColor="#C4A35A" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    
+                    {/* Floating Elements */}
+                    <motion.div 
+                      className="absolute top-1/4 left-1/4 w-10 h-10 rounded-full bg-ebcGold/30 backdrop-blur-sm border border-ebcGold/50 flex items-center justify-center"
+                      animate={{ 
+                        y: [0, -15, 0],
+                        x: [0, 10, 0]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 3,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <div className="w-5 h-5 rounded-full bg-ebcGold animate-pulse" />
+                    </motion.div>
+                    
+                    <motion.div 
+                      className="absolute bottom-1/3 right-1/4 w-14 h-14 rounded-full bg-ebcEmerald/30 backdrop-blur-sm border border-ebcEmerald/50 flex items-center justify-center"
+                      animate={{ 
+                        y: [0, -20, 0],
+                        x: [0, -8, 0]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 4,
+                        ease: "easeInOut",
+                        delay: 0.5
+                      }}
+                    >
+                      <div className="w-7 h-7 rounded-full bg-ebcEmerald animate-pulse" />
+                    </motion.div>
+                    
+                    {/* Central Bridge Pillar */}
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-20 bg-gradient-to-t from-ebcGold to-ebcEmerald" />
+                    
+                    {/* Animated Particles */}
+                    {particlePositions.map((particle, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1 h-1 bg-ebcGold rounded-full"
+                        initial={{
+                          x: particle.x,
+                          y: 250,
+                          opacity: 0
+                        }}
+                        animate={{
+                          y: [250, 180, 250],
+                          opacity: [0, 1, 0]
+                        }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: particle.duration,
+                          delay: i * 0.3,
+                          ease: "easeInOut"
+                        }}
+                      />
+                    ))}
+                  </div>
+                  
+                  {/* Bottom Label - Left Corner */}
+                  <div className="absolute bottom-2 left-3 text-center">
+                    <p className="text-xs text-white/60">Connecting Communities • Building Futures</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Subheading - Full width */}
+            <motion.p 
+              className="text-base md:text-lg text-white/90 leading-relaxed mt-8 pt-6 border-t border-white/20 max-w-4xl mx-auto text-center"
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              EBC is a strategic advisory firm partnering with institutions, governments, and communities to design and deliver innovative, evidence-based solutions that advance sustainable development through inclusive economic empowerment.
+            </motion.p>
+            
+            {/* CTA Buttons - After Subheading */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center mt-6" 
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.button 
+                onClick={() => scrollToSection('services')}
+                className="group bg-ebcGold text-white px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-ebcNavy transition-all duration-300 shadow-lg flex items-center justify-center gap-2 min-w-[180px] text-sm"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Explore Our Services</span>
+                <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={14} />
+              </motion.button>
+              
+              <motion.button 
+                onClick={() => scrollToSection('contact')}
+                className="group border-2 border-white/30 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/10 hover:border-white transition-all duration-300 flex items-center justify-center gap-2 min-w-[180px] text-sm"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaPlay size={12} />
+                <span>Partner With Us</span>
+              </motion.button>
+            </motion.div>
+          </div>
+        </div>
+        
+        {/* Bottom Controls Container */}
+        <div className="relative z-20 pb-6">
+          {/* Slide Dots */}
+          <div className="flex gap-3 justify-center mb-4">
+            {sliderImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`transition-all duration-300 ${
+                  currentSlide === index
+                    ? 'w-6 h-1.5 bg-ebcGold rounded-full'
+                    : 'w-1.5 h-1.5 bg-white/50 rounded-full hover:bg-white/80'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+          
+          {/* Scroll Indicator */}
+          <motion.div 
+            className="flex justify-center"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+          >
+            <div className="w-5 h-8 border-2 border-white/30 rounded-full flex justify-center">
+              <motion.div 
+                className="w-1 h-1.5 bg-white rounded-full mt-2"
+                animate={{ y: [0, 3, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+</file>
+
+<file path="src/sections/ServicesSection.tsx">
+// src/sections/ServicesSection.tsx
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { FaChartLine, FaHeartbeat, FaBuilding, FaHandshake, FaFileAlt, FaCommentDots, FaArrowRight } from 'react-icons/fa';
+
+export const ServicesSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" as const }
+    }
+  };
+
+  const services = [
+    {
+      number: "01",
+      icon: FaChartLine,
+      iconColor: "text-emerald-400",
+      bgColor: "bg-emerald-500/10",
+      title: "Economic Empowerment Programme Design",
+      description: "Holistic, market-responsive programmes that create sustainable livelihoods for youth and women. Co-created with beneficiaries and grounded in local market reality.",
+      tags: ["Market Assessments", "Livelihoods", "Entrepreneurship", "Microfinance"],
+      tagColor: "bg-emerald-500/10 text-emerald-400"
+    },
+    {
+      number: "02",
+      icon: FaHeartbeat,
+      iconColor: "text-amber-400",
+      bgColor: "bg-amber-500/10",
+      title: "Public Health Systems Strengthening",
+      description: "Integrating economic empowerment into health service delivery to improve clinical outcomes and long-term well-being for adolescent girls and young women.",
+      tags: ["Health Integration", "Implementation Structure", "Quality", "Financing"],
+      tagColor: "bg-amber-500/10 text-amber-400"
+    },
+    {
+      number: "03",
+      icon: FaBuilding,
+      iconColor: "text-rose-400",
+      bgColor: "bg-rose-500/10",
+      title: "Institutional Capacity Strengthening",
+      description: "Building systems that last beyond donor cycles. We strengthen youth-led organizations, civil society, and government institutions for sustained impact.",
+      tags: ["MEAL Systems", "Strategy", "Governance", "Sustainability"],
+      tagColor: "bg-rose-500/10 text-rose-400"
+    },
+    {
+      number: "04",
+      icon: FaHandshake,
+      iconColor: "text-sky-400",
+      bgColor: "bg-sky-500/10",
+      title: "Partnership & Stakeholder Engagement",
+      description: "Building multi-sector partnerships that enable programmes to scale. Connecting governments, donors, NGOs, and communities into aligned ecosystems.",
+      tags: ["Stakeholder Mapping", "MOU Development", "Convening", "Coalition Building"],
+      tagColor: "bg-sky-500/10 text-sky-400"
+    },
+    {
+      number: "05",
+      icon: FaFileAlt,
+      iconColor: "text-ebcGold",
+      bgColor: "bg-ebcGold/10",
+      title: "Policy Advisory & Evidence Generation",
+      description: "Translating programme evidence into policy and practice. Supporting governments to scale successful interventions into national systems.",
+      tags: ["Policy Dialogues", "Evidence Docs", "Investment Cases", "Advocacy"],
+      tagColor: "bg-ebcGold/10 text-ebcGold"
+    }
+  ];
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section id="services" className="py-28 bg-gradient-to-br from-ebcNavy via-ebcNavy/95 to-ebcNavy relative overflow-hidden">
+      {/* Simple Background Overlay */}
+      <div className="absolute inset-0 bg-black/20" />
+      
+      {/* Gradient Orbs */}
+      <div className="absolute top-0 -left-40 w-80 h-80 bg-ebcGold/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-0 -right-40 w-96 h-96 bg-ebcEmerald/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-ebcGold/5 rounded-full blur-3xl" />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={containerVariants}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
+          <motion.div variants={itemVariants}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-ebcGold/20 backdrop-blur-sm rounded-full mb-6 border border-ebcGold/30">
+              <div className="w-2 h-2 bg-ebcGold rounded-full animate-pulse" />
+              <span className="text-ebcGold font-semibold text-sm tracking-wider uppercase">What We Do</span>
+            </div>
+          </motion.div>
+          <motion.h2 
+            variants={itemVariants}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          >
+            Five Interconnected{' '}
+            <span className="relative inline-block">
+              <span className="text-ebcGold">Practice Areas</span>
+              <motion.span 
+                className="absolute bottom-2 left-0 w-full h-2 bg-ebcGold/30 -z-10"
+                initial={{ width: 0 }}
+                animate={isInView ? { width: "100%" } : {}}
+                transition={{ delay: 0.5, duration: 0.6 }}
+              />
+            </span>
+          </motion.h2>
+          <motion.p 
+            variants={itemVariants}
+            className="text-lg text-white/80 leading-relaxed"
+          >
+            Every engagement is tailored to client context while drawing on EBC's deep expertise in the health-economic nexus 
+            and proven implementation experience across Africa.
+          </motion.p>
+        </motion.div>
+
+        {/* Services Grid */}
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={service.number}
+                variants={itemVariants}
+                className="group relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-ebcGold/50 transition-all duration-500 overflow-hidden hover:-translate-y-2"
+                whileHover={{ scale: 1.02 }}
+              >
+                {/* Gradient Border Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-ebcGold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="p-8 relative">
+                  {/* Service Number and Icon */}
+                  <div className="flex justify-between items-start mb-6">
+                    <span className="text-5xl font-bold text-white/10 group-hover:text-ebcGold/20 transition-all duration-300">
+                      {service.number}
+                    </span>
+                    <div className={`w-14 h-14 ${service.bgColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/10`}>
+                      <Icon className={`w-7 h-7 ${service.iconColor}`} />
+                    </div>
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-ebcGold transition-colors duration-300 leading-tight">
+                    {service.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+                  
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {service.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`px-3 py-1.5 ${service.tagColor} text-xs rounded-lg font-medium transition-all duration-300 hover:scale-105 cursor-default backdrop-blur-sm`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+
+          {/* CTA Card - Enhanced */}
+          <motion.div
+            variants={itemVariants}
+            className="relative bg-gradient-to-br from-ebcGold/20 to-ebcEmerald/20 backdrop-blur-md rounded-2xl overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/10"
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-ebcGold/20 rounded-full blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-ebcEmerald/20 rounded-full blur-2xl" />
+            
+            <div className="p-8 relative z-10 flex flex-col h-full">
+              <div className="flex justify-end mb-8">
+                <div className="w-16 h-16 bg-ebcGold/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm border border-ebcGold/30">
+                  <FaCommentDots className="w-8 h-8 text-ebcGold" />
+                </div>
+              </div>
+              
+              <div className="flex-grow">
+                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                  Ready to Create <br />Impact Together?
+                </h3>
+                <p className="text-white/70 text-sm leading-relaxed mb-8">
+                  Partner with EBC to design or scale impactful programmes across Africa. 
+                  Whether you're a government, donor, NGO, or development partner — let's start a conversation.
+                </p>
+              </div>
+              
+              <motion.button
+                onClick={scrollToContact}
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-ebcGold to-ebcEmerald text-white px-6 py-3.5 rounded-xl font-bold hover:from-ebcGold/90 hover:to-ebcEmerald/90 transition-all duration-300 shadow-lg w-fit group/btn"
+                whileHover={{ scale: 1.05, x: 5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Start a Conversation</span>
+                <FaArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              </motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="mt-20 pt-12 border-t border-white/10 text-center"
+        >
+          <p className="text-sm uppercase tracking-wider text-white/50 mb-6">Trusted By Organizations Across Africa</p>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-80">
+            {["Government Agencies", "Local & International NGOs", "Development Partners", "Private Sector", "Community Organizations"].map((type) => (
+              <span key={type} className="text-white/60 text-sm font-medium hover:text-ebcGold transition-colors cursor-default">
+                {type}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+</file>
+
+<file path="src/sections/AboutSection.tsx">
+// src/sections/AboutSection.tsx
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { FaLinkedin, FaEnvelope, FaGlobe, FaAward, FaUsers, FaChartLine } from 'react-icons/fa';
+
+export const AboutSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <section id="about" className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Founder Section - Picture and Andrew's Details */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
+          
+          {/* Left Column - Professional Picture */}
+          <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7 }}
+              className="relative"
+            >
+              {/* Main Image Container */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <div className="aspect-[4/5] bg-gradient-to-br from-ebcNavy/10 to-ebcGold/10 p-2">
+                  <img 
+src="/andrew.jpeg"
+                    alt="Andrew Wanjala Wafula - Founder"
+                    className="w-full h-full object-cover rounded-xl"
+                    loading="eager"
+                  />
+                </div>
+                
+                {/* Decorative Border */}
+                <div className="absolute inset-0 border-2 border-ebcGold/20 rounded-2xl pointer-events-none" />
+              </div>
+              
+              {/* Experience Badge */}
+              <motion.div
+                className="absolute -top-4 -left-4 bg-ebcGold text-white rounded-lg p-4 shadow-lg z-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                <div className="text-2xl font-bold">10+</div>
+                <div className="text-xs">Years in<br />Development</div>
+              </motion.div>
+            </motion.div>
+          </div>
+          
+          {/* Right Column - Andrew's Details */}
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="space-y-6"
+          >
+            {/* Section Label */}
+            <motion.div variants={itemVariants}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-ebcGold/10 rounded-full">
+                <div className="w-2 h-2 bg-ebcGold rounded-full" />
+                <span className="text-ebcGold font-semibold text-sm tracking-wider">FOUNDER & PRINCIPAL CONSULTANT</span>
+              </div>
+            </motion.div>
+            
+            {/* Name */}
+            <motion.h2 
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold text-ebcNavy leading-tight"
+            >
+              Andrew Wanjala Wafula
+            </motion.h2>
+            
+            {/* Role */}
+            <motion.p 
+              variants={itemVariants}
+              className="text-lg text-ebcGold font-semibold"
+            >
+              MDS · Development Specialist
+            </motion.p>
+            
+            {/* Bio */}
+            <motion.p 
+              variants={itemVariants}
+              className="text-ebcGray/80 leading-relaxed"
+            >
+              Andrew is a development, advocacy, and partnerships specialist with over 10 years of progressive experience across Africa. He specializes in translating innovation into policy and practice within complex government systems, working at the intersection of economic empowerment, public health, and youth development.
+            </motion.p>
+            
+            {/* Experience Highlights */}
+            <motion.div 
+              variants={itemVariants}
+              className="space-y-3 pt-2"
+            >
+              <div className="flex items-start gap-3">
+                <FaUsers className="text-ebcGold mt-1 flex-shrink-0" size={16} />
+                <p className="text-sm text-ebcGray/70">
+                  Led multi-county programmes reaching <strong className="text-ebcNavy">over 100,000 adolescents and young people</strong> at LVCT Health (2017–2025)
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <FaChartLine className="text-ebcGold mt-1 flex-shrink-0" size={16} />
+                <p className="text-sm text-ebcGray/70">
+                  Designed and operationalized the <strong className="text-ebcNavy">Vukisha Economic Empowerment Model (VEEM)</strong>, reaching over 40,000 young women across four counties
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <FaGlobe className="text-ebcGold mt-1 flex-shrink-0" size={16} />
+                <p className="text-sm text-ebcGray/70">
+                  Represented Kenya at international scientific conferences on including  IAS 2022(Canada) AIDS Impact 2023 (Sweden) HIVRP4 2024 (Peru) CROI 2022 (USA)<strong className="text-ebcNavy">three continents</strong> (Canada, Sweden, USA)
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <FaAward className="text-ebcGold mt-1 flex-shrink-0" size={16} />
+                <p className="text-sm text-ebcGray/70">
+                  Contributed to national policy dialogues on <strong className="text-ebcNavy">adolescent health, economic empowerment, and social protection</strong>
+                </p>
+              </div>
+            </motion.div>
+            
+            {/* Quote */}
+            <motion.div 
+              variants={itemVariants}
+              className="bg-teal-50 rounded-xl p-5 border-l-4 border-ebcGold mt-4"
+            >
+              <div className="text-2xl text-ebcGold mb-1">"</div>
+              <p className="text-ebcNavy text-sm italic leading-relaxed">
+                Sustainable development happens at the intersection — where economic opportunity meets health systems, where community knowledge meets government policy, and where evidence meets action. Empowering Bridge Consulting exists to build those connections.
+              </p>
+              <p className="text-xs font-semibold text-ebcGold mt-3">
+                — Andrew Wanjala Wafula
+              </p>
+            </motion.div>
+            
+            {/* Social Links */}
+            <motion.div 
+              variants={itemVariants}
+              className="flex gap-3 pt-2"
+            >
+              <a 
+                href="https://www.linkedin.com/in/andrew-wafula-4b2228194/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-ebcNavy/5 text-ebcNavy rounded-lg text-sm font-medium hover:bg-ebcGold hover:text-white transition-all duration-300"
+              >
+                <FaLinkedin size={14} />
+                <span>LinkedIn</span>
+              </a>
+              <a 
+                href="mailto:andrew@empoweringbridge.co.ke"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-ebcNavy/5 text-ebcNavy rounded-lg text-sm font-medium hover:bg-ebcGold hover:text-white transition-all duration-300"
+              >
+                <FaEnvelope size={14} />
+                <span>Email Andrew</span>
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Consultancy Information Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="border-t border-gray-200 pt-16 mt-8"
+        >
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-ebcGold/10 rounded-full mb-4">
+              <div className="w-2 h-2 bg-ebcGold rounded-full" />
+              <span className="text-ebcGold font-semibold text-sm tracking-wider">THE CONSULTANCY</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-ebcNavy mb-4">
+              A Consulting Division Driving <span className="text-ebcGold">Real-World Impact</span>
+            </h2>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Description */}
+            <div className="space-y-6">
+              <p className="text-lg text-ebcGray/80 leading-relaxed">
+                Empowering Bridge Consulting (EBC) is a consulting division of Favoured Classic Limited, a Kenya-registered company. 
+                We specialize in designing integrated solutions that address the link between economic vulnerability and health outcomes, 
+                particularly among youth and women.
+              </p>
+              <p className="text-ebcGray/70 leading-relaxed">
+                Our team brings field-tested knowledge from programmes across four Kenyan counties, reaching over 100,000 young people. 
+                We don't just advise — we've done it. Every framework we recommend, we have tested. Every model we propose, we have iterated in the field.
+              </p>
+            </div>
+            
+            {/* Right Column - Vision & Mission */}
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-ebcNavy/5 to-transparent p-6 rounded-xl border border-ebcNavy/10 hover:shadow-lg transition-shadow">
+                <div className="text-3xl mb-3">🌍</div>
+                <h3 className="text-xl font-bold text-ebcNavy mb-2">Our Vision</h3>
+                <p className="text-ebcGray/70 text-sm">
+                  A world where sustainable livelihoods drive health, resilience, and opportunity for every young person and community.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-ebcGold/5 to-transparent p-6 rounded-xl border border-ebcGold/10 hover:shadow-lg transition-shadow">
+                <div className="text-3xl mb-3">⚡</div>
+                <h3 className="text-xl font-bold text-ebcNavy mb-2">Our Mission</h3>
+                <p className="text-ebcGray/70 text-sm">
+                  To empower youth- and women-focused organizations by providing strategic advisory that transforms innovative ideas into scalable solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Three Pillars */}
+          <motion.div 
+            variants={itemVariants}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-12 mt-8 border-t border-gray-100"
+          >
+            {[
+              {
+                title: "Empowering",
+                desc: "Building agency, confidence, and decision-making power among individuals and institutions at every level.",
+                color: "from-ebcGold/20 to-transparent",
+                border: "border-ebcGold/30"
+              },
+              {
+                title: "Bridge",
+                desc: "Connecting innovation & policy · communities & government · health systems & livelihoods.",
+                color: "from-ebcNavy/20 to-transparent",
+                border: "border-ebcNavy/30"
+              },
+              {
+                title: "Consulting",
+                desc: "Providing strategic advisory, technical expertise, and capacity strengthening for sustainable impact.",
+                color: "from-ebcEmerald/20 to-transparent",
+                border: "border-ebcEmerald/30"
+              }
+            ].map((pillar) => (
+              <motion.div
+                key={pillar.title}
+                className={`bg-gradient-to-br ${pillar.color} p-5 rounded-xl border ${pillar.border} hover:scale-105 transition-all duration-300 text-center`}
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <h4 className="text-xl font-bold text-ebcNavy mb-2">{pillar.title}</h4>
+                <p className="text-ebcGray/60 text-xs leading-relaxed">{pillar.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+</file>
+
+</files>

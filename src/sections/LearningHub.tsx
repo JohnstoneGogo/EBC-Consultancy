@@ -82,7 +82,7 @@ const LearningHub: React.FC = () => {
               <div className="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-xl mb-6">
                 <div className="inline-block bg-ebcEmerald text-[10px] font-black px-2 py-1 rounded mb-4">COMING SOON</div>
                 <h5 className="font-bold text-lg text-ebcGold mb-2">Introduction to VEEM</h5>
-                <p className="text-xs text-blue-100/70 mb-4 italic italic">Transitioning youth from vulnerability to resilience.</p>
+                <p className="text-xs text-blue-100/70 mb-4  italic">Transitioning youth from vulnerability to resilience.</p>
                 <div className="flex items-center gap-4 text-[11px] font-bold text-white/60">
                   <span>⏱ 45 Minutes</span>
                   <span>📂 4 Video Modules</span>
