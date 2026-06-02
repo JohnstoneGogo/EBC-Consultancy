@@ -1,9 +1,46 @@
 // src/sections/ContactSection.tsx
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' });
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch('https://formsubmit.co/andrew@empoweringbridge.co.ke', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (response.ok) {
+        setSubmitStatus({ 
+          type: 'success', 
+          message: 'Thank you! We\'ll get back to you within 24 hours.' 
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch {
+      setSubmitStatus({ 
+        type: 'error', 
+        message: 'Something went wrong. Please email us directly at andrew@empoweringbridge.co.ke' 
+      });
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus({ type: null, message: '' }), 5000);
+    }
   };
 
   return (
@@ -52,41 +89,88 @@ export const ContactSection = () => {
             className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl"
           >
             <h3 className="text-2xl font-bold mb-6">Start the Conversation</h3>
-            <form className="space-y-6">
+            
+            {/* Success/Error Message */}
+            {submitStatus.type && (
+              <div className={`mb-6 p-4 rounded-xl ${
+                submitStatus.type === 'success' 
+                  ? 'bg-green-500/20 border border-green-500/50 text-green-200' 
+                  : 'bg-red-500/20 border border-red-500/50 text-red-200'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="_subject" value="New Contact Form Submission - EBC Website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              
               <div>
-                <label className="block text-sm font-medium mb-2">Full Name</label>
-                <input type="text" className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" placeholder="Your full name" />
+                <label className="block text-sm font-medium mb-2">Full Name *</label>
+                <input 
+                  type="text" 
+                  name="name"
+                  required
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" 
+                  placeholder="Your full name" 
+                />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">Email</label>
-                <input type="email" className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" placeholder="your.email@example.com" />
+                <label className="block text-sm font-medium mb-2">Email *</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  required
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" 
+                  placeholder="your.email@example.com" 
+                />
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">Organization</label>
-                  <input type="text" className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" placeholder="Your organization" />
+                  <input 
+                    type="text" 
+                    name="organization"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" 
+                    placeholder="Your organization" 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Phone (Optional)</label>
-                  <input type="tel" className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" placeholder="+254..." />
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all" 
+                    placeholder="+254..." 
+                  />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">Message</label>
-                <textarea rows={5} className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all resize-vertical" placeholder="Tell us about your project..." />
+                <label className="block text-sm font-medium mb-2">Message *</label>
+                <textarea 
+                  name="message"
+                  required
+                  rows={5} 
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl placeholder-white/50 focus:border-ebcGold focus:outline-none focus:ring-2 focus:ring-ebcGold/50 transition-all resize-vertical" 
+                  placeholder="Tell us about your project..." 
+                />
               </div>
               <motion.button
                 type="submit"
-                className="w-full bg-ebcGold text-ebcNavy px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={isSubmitting}
+                className={`w-full bg-ebcGold text-ebcNavy px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
+                whileHover={!isSubmitting ? { scale: 1.02, y: -2 } : {}}
+                whileTap={!isSubmitting ? { scale: 0.98 } : {}}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </motion.button>
             </form>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Update these with real details */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -108,19 +192,23 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold">Email</p>
-                  <a href="mailto:andrew@empoweringbridge.com" className="text-ebcGold hover:text-white transition-colors text-lg font-medium block group-hover:underline">andrew@empoweringbridge.com</a>
+                  <a href="mailto:andrew@empoweringbridge.co.ke" className="text-ebcGold hover:text-white transition-colors text-lg font-medium block group-hover:underline">
+                    andrew@empoweringbridge.co.ke
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/10 transition-all group cursor-pointer">
                 <div className="w-12 h-12 bg-ebcEmerald/30 rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-ebcEmerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 01 1.21-.502l4.493 1.498a1 1 0 01.684 .948V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
                   </svg>
                 </div>
                 <div>
                   <p className="font-semibold">Phone</p>
-                  <a href="tel:+254722123456" className="text-ebcEmerald hover:text-white transition-colors text-lg font-medium block group-hover:underline">+254 722 123 456</a>
+                  <a href="tel:+254726332000" className="text-ebcEmerald hover:text-white transition-colors text-lg font-medium block group-hover:underline">
+                    +254 726 332 000
+                  </a>
                 </div>
               </div>
 
@@ -132,7 +220,14 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold">LinkedIn</p>
-                  <a href="#" className="text-ebcGold hover:text-white transition-colors text-lg font-medium block group-hover:underline">Andrew Wafula</a>
+                  <a 
+                    href="https://www.linkedin.com/in/andrew-wafula-4b2228194/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-ebcGold hover:text-white transition-colors text-lg font-medium block group-hover:underline"
+                  >
+                    Andrew Wafula
+                  </a>
                 </div>
               </div>
             </div>
@@ -156,4 +251,3 @@ export const ContactSection = () => {
     </section>
   );
 };
-

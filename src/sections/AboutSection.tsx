@@ -1,6 +1,8 @@
 // src/sections/AboutSection.tsx
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Mission from '../assets/mission.png';
+import Vision from '../assets/vision.png';
 import { FaLinkedin, FaEnvelope, FaGlobe, FaAward, FaUsers, FaChartLine } from 'react-icons/fa';
 
 export const AboutSection = () => {
@@ -41,10 +43,10 @@ export const AboutSection = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <div className="aspect-[4/5] bg-gradient-to-br from-ebcNavy/10 to-ebcGold/10 p-2">
                   <img 
-src="/andrew.jpeg"
+                    src="/andrew.jpeg"
                     alt="Andrew Wanjala Wafula - Founder"
                     className="w-full h-full object-cover rounded-xl"
-                    loading="eager"
+                    loading="lazy"
                   />
                 </div>
                 
@@ -209,14 +211,26 @@ src="/andrew.jpeg"
             {/* Right Column - Vision & Mission */}
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-ebcNavy/5 to-transparent p-6 rounded-xl border border-ebcNavy/10 hover:shadow-lg transition-shadow">
-                <div className="text-3xl mb-3">🌍</div>
+                <div className="text-3xl mb-3">
+                   <img 
+                      src={Mission} 
+                      alt="Mission icon"
+                      className="w-8 h-8 object-contain"
+                    />
+                </div>
                 <h3 className="text-xl font-bold text-ebcNavy mb-2">Our Vision</h3>
                 <p className="text-ebcGray/70 text-sm">
                   A world where sustainable livelihoods drive health, resilience, and opportunity for every young person and community.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-ebcGold/5 to-transparent p-6 rounded-xl border border-ebcGold/10 hover:shadow-lg transition-shadow">
-                <div className="text-3xl mb-3">⚡</div>
+                <div className="text-3xl mb-3">
+                  <img 
+                    src={Vision} // Replace with your image path
+                    alt="Mission icon"
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
                 <h3 className="text-xl font-bold text-ebcNavy mb-2">Our Mission</h3>
                 <p className="text-ebcGray/70 text-sm">
                   To empower youth- and women-focused organizations by providing strategic advisory that transforms innovative ideas into scalable solutions.

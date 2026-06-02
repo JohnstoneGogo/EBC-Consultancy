@@ -1,5 +1,8 @@
 // src/sections/VeemSection.tsx
 import { motion } from 'framer-motion';
+import thriving from '../assets/thriving.png';
+import Crossing from '../assets/crossing.jpeg';
+import vulnerability from '../assets/vulnerability.jpeg';
 import type { JSX } from 'react';
 import { FaChartLine, FaPiggyBank, FaLightbulb, FaHandsHelping, FaLink, FaInfoCircle } from 'react-icons/fa';
 
@@ -206,15 +209,22 @@ export const VeemSection = () => {
             
             <div className="grid sm:grid-cols-3 gap-4 mb-6 max-w-4xl">
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-ebcGold/50 transition-all">
-                <div className="text-3xl mb-2">🌉</div>
+                <div className="text-3xl mb-2">
+                  <img src={vulnerability} alt="Surviving to thriving" />
+                </div>
                 <p className="text-white/80 text-sm">Crossing from vulnerability to empowerment</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-ebcGold/50 transition-all">
-                <div className="text-3xl mb-2">🚀</div>
+                <div className="text-3xl mb-2">
+                  <img src={Crossing} alt="Surviving to thriving" />
+                </div>
                 <p className="text-white/80 text-sm">Transitioning from economic dependency to independence</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-ebcGold/50 transition-all">
-                <div className="text-3xl mb-2">🌅</div>
+                <div className="text-3xl mb-2">
+                  <img src={thriving} alt="Surviving to thriving"
+                   />
+                </div>
                 <p className="text-white/80 text-sm">Moving from surviving to thriving</p>
               </div>
             </div>
