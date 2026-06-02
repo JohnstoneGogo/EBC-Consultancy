@@ -160,10 +160,10 @@ export const Header = () => {
               onClick={() => handleLinkClick('home')}
             >
               <img 
-src="/ebc-logo.png"
+                src="/ebc-logo.png"
                 alt="EBC Logo" 
                 className="h-full w-auto object-contain"
-                loading="lazy"
+                loading="eager"
               />
             </motion.div>
             

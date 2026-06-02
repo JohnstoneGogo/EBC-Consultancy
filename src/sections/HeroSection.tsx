@@ -73,8 +73,8 @@ export const HeroSection = () => {
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
-  const particlePositions = Array.from({ length: 8 }, (_, i) => ({
-    x: 50 + i * 40,
+  const particlePositions = Array.from({ length: 6 }, (_, i) => ({
+    x: 50 + i * 50,
     duration: 2.0 + i * 0.3
   }));
 
@@ -112,7 +112,7 @@ export const HeroSection = () => {
       {/* Main Content Area */}
       <div className="relative z-10 h-full flex flex-col">
         {/* Top spacer - Reduced to match smaller header */}
-        <div className="h-20 lg:h-24" />
+        <div className="h-32 lg:h-36" />
         
         {/* Main Content */}
         <div className="flex-1 flex flex-col justify-center">
@@ -157,24 +157,24 @@ export const HeroSection = () => {
                 </motion.h1>
               </motion.div>
               
-              {/* Right Column - Bridge Visual */}
+              {/* Right Column - Bridge Visual (REDUCED SIZE) */}
               <motion.div 
                 className="lg:col-span-5"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               >
-                <div className="relative h-80 bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-6 backdrop-blur-sm overflow-hidden">
+                <div className="relative h-56 bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-4 backdrop-blur-sm overflow-hidden">
                   {/* Animated Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 left-0 w-64 h-64 bg-ebcGold rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-0 right-0 w-64 h-64 bg-ebcEmerald rounded-full blur-3xl animate-pulse delay-1000" />
+                    <div className="absolute top-0 left-0 w-48 h-48 bg-ebcGold rounded-full blur-3xl animate-pulse" />
+                    <div className="absolute bottom-0 right-0 w-48 h-48 bg-ebcEmerald rounded-full blur-3xl animate-pulse delay-1000" />
                   </div>
                   
                   {/* Bridge Visualization */}
                   <div className="relative h-full flex flex-col items-center justify-center">
-                    {/* Bridge Arc */}
-                    <svg className="absolute w-full h-full" viewBox="0 0 400 300">
+                    {/* Bridge Arc - Scaled */}
+                    <svg className="absolute w-full h-full scale-75" viewBox="0 0 400 300">
                       <motion.path
                         d="M 50,250 Q 200,150 350,250"
                         stroke="url(#gradient)"
@@ -194,9 +194,9 @@ export const HeroSection = () => {
                       </defs>
                     </svg>
                     
-                    {/* Floating Elements */}
+                    {/* Floating Elements - Smaller */}
                     <motion.div 
-                      className="absolute top-1/4 left-1/4 w-10 h-10 rounded-full bg-ebcGold/30 backdrop-blur-sm border border-ebcGold/50 flex items-center justify-center"
+                      className="absolute top-1/4 left-1/4 w-8 h-8 rounded-full bg-ebcGold/30 backdrop-blur-sm border border-ebcGold/50 flex items-center justify-center"
                       animate={{ 
                         y: [0, -15, 0],
                         x: [0, 10, 0]
@@ -207,11 +207,11 @@ export const HeroSection = () => {
                         ease: "easeInOut"
                       }}
                     >
-                      <div className="w-5 h-5 rounded-full bg-ebcGold animate-pulse" />
+                      <div className="w-4 h-4 rounded-full bg-ebcGold animate-pulse" />
                     </motion.div>
                     
                     <motion.div 
-                      className="absolute bottom-1/3 right-1/4 w-14 h-14 rounded-full bg-ebcEmerald/30 backdrop-blur-sm border border-ebcEmerald/50 flex items-center justify-center"
+                      className="absolute bottom-1/3 right-1/4 w-10 h-10 rounded-full bg-ebcEmerald/30 backdrop-blur-sm border border-ebcEmerald/50 flex items-center justify-center"
                       animate={{ 
                         y: [0, -20, 0],
                         x: [0, -8, 0]
@@ -223,13 +223,13 @@ export const HeroSection = () => {
                         delay: 0.5
                       }}
                     >
-                      <div className="w-7 h-7 rounded-full bg-ebcEmerald animate-pulse" />
+                      <div className="w-5 h-5 rounded-full bg-ebcEmerald animate-pulse" />
                     </motion.div>
                     
-                    {/* Central Bridge Pillar */}
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-20 bg-gradient-to-t from-ebcGold to-ebcEmerald" />
+                    {/* Central Bridge Pillar - Smaller */}
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 h-14 bg-gradient-to-t from-ebcGold to-ebcEmerald" />
                     
-                    {/* Animated Particles */}
+                    {/* Animated Particles - Reduced */}
                     {particlePositions.map((particle, i) => (
                       <motion.div
                         key={i}
@@ -240,7 +240,7 @@ export const HeroSection = () => {
                           opacity: 0
                         }}
                         animate={{
-                          y: [250, 180, 250],
+                          y: [250, 200, 250],
                           opacity: [0, 1, 0]
                         }}
                         transition={{
@@ -263,7 +263,7 @@ export const HeroSection = () => {
             
             {/* Subheading - Full width */}
             <motion.p 
-              className="text-base md:text-lg text-white/90 leading-relaxed mt-8 pt-6 border-t border-white/20 max-w-4xl mx-auto text-center"
+              className="text-base md:text-lg text-white/90 leading-relaxed mt-2 pt-6 border-t border-white/20 max-w-4xl mx-auto text-center"
               variants={itemVariants}
               initial="hidden"
               animate="visible"
@@ -273,14 +273,14 @@ export const HeroSection = () => {
             
             {/* CTA Buttons - After Subheading */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center mt-6" 
+              className="flex flex-col sm:flex-row gap-4 justify-center mt-4" 
               variants={itemVariants}
               initial="hidden"
               animate="visible"
             >
               <motion.button 
                 onClick={() => scrollToSection('services')}
-                className="group bg-ebcGold text-white px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-ebcNavy transition-all duration-300 shadow-lg flex items-center justify-center gap-2 min-w-[180px] text-sm"
+                className="group bg-ebcGold text-white px-4 py-2 rounded-xl font-bold hover:bg-white hover:text-ebcNavy transition-all duration-300 shadow-lg flex items-center justify-center gap-1.5 min-w-[140px] text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -290,7 +290,7 @@ export const HeroSection = () => {
               
               <motion.button 
                 onClick={() => scrollToSection('contact')}
-                className="group border-2 border-white/30 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/10 hover:border-white transition-all duration-300 flex items-center justify-center gap-2 min-w-[180px] text-sm"
+                className="group border-2 border-white/30 text-white px-4 py-2 rounded-xl font-bold hover:bg-white/10 hover:border-white transition-all duration-300 flex items-center justify-center gap-1.5 min-w-[140px] text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -304,7 +304,7 @@ export const HeroSection = () => {
         {/* Bottom Controls Container */}
         <div className="relative z-20 pb-6">
           {/* Slide Dots */}
-          <div className="flex gap-3 justify-center mb-4">
+          <div className="flex gap-3 justify-center mt-4 mb-2">
             {sliderImages.map((_, index) => (
               <button
                 key={index}

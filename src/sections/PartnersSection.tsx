@@ -40,14 +40,14 @@ export const PartnersSection = () => {
     {
       name: "Women's Economic Imperative",
       acronym: "WEI",
-logo: "/wei-logo.jpeg",
+      logo: "/wei-logo.jpeg",
       website: "https://weiforward.org",
       description: "Advancing women's economic empowerment across Africa"
     },
     {
       name: "Empowering Bridge Consulting",
       acronym: "EBC",
-logo: "/ebc-logo.png", // Path to EBC logo
+      logo: "/ebc-logo.png", // Path to EBC logo
       website: "https://www.empoweringbridge.co.ke",
       description: "Strategic advisory for sustainable development"
     }
